@@ -1,0 +1,4 @@
+sed -f sedcmd $1 > tt
+MYFILE=`basename $1`
+#echo ${MYFILE}
+cp tt ${MYFILE}

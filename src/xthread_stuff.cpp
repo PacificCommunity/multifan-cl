@@ -1,0 +1,403 @@
+/*
+Copyright (C) Pacific Community (SPC)
+Refer to COPYRIGHT and LICENSE files in the root of the repository
+*/
+#define MY_REAL_DOUBLE double
+#include "extras.h"
+#define USE_NO_LAPACKE
+
+#include <admodel.h>
+#include <cstddef>
+#include "adthread.h"
+#if !defined(OPT_LIB)
+#  if !defined(CHK_ID_STRING)
+#    define CHK_ID_STRING
+#  endif
+#endif
+
+/* prototype for thread routine */
+void admb_thread(void * ptr);
+
+//pthread_mutex_t mutex_print;
+
+typedef char * pchar;
+typedef ofstream * pofstream;
+
+void adjoint_adwrite_lock_buffer_1(void);
+void adjoint_adwrite_lock_buffer_2(void);
+
+void adpthread_manager::write_lock_buffer(int sno)
+{
+  if (logflag)
+  {
+    //*(logfiles[0]) << " write_lock_buffer_master"   << endl;
+    //adt[0].get_elapsed_time_and_reset();
+  }
+  int tn2=ad_comm::pthread_manager->get_slave_number();
+  int s1,s2;
+  if (tn2==sno)
+  {
+    //cerr << "Error -- process can not write to itself" << endl;
+    ad_exit(1);
+  }
+  else if (tn2<sno)  // old master write to slave
+  {
+    s1=tn2;
+    s2=sno;
+    pthread_mutex_lock(ssmutex[s1]+s2);
+    // only write if buffer empty
+    while (smflag(s1,s2) == 1 || ssflag(s1,s2) ==1 ) 
+      pthread_cond_wait(smcondition[s1]+s2,ssmutex[s1]+s2);
+//      save_identifier_string("YX");
+  const char * str1;
+  str1="YX";
+  char* strx1=const_cast <char*> (str1);
+  save_identifier_string(strx1);
+    save_int_value(sno);
+    save_int_value(tn2);
+//      save_identifier_string("OD");
+  const char * str2;
+  str2="OD";
+  char* strx2=const_cast <char*> (str2);
+  save_identifier_string(strx2);
+    save_pointer_value(this);
+//      save_identifier_string("CT");
+  const char * str3;
+  str3="CT";
+  char* strx3=const_cast <char*> (str3);
+  save_identifier_string(strx3);
+    gradient_structure::GRAD_STACK1->
+        set_gradient_stack(::adjoint_adwrite_lock_buffer_1);
+  }
+  else if (sno<tn2)  // old slave write to master
+  {
+    s2=tn2;
+    s1=sno;
+    pthread_mutex_lock(ssmutex[s1]+s2);
+    // only write if buffer empty
+    while (smflag(s1,s2) == 1 || ssflag(s1,s2) ==1 ) 
+      pthread_cond_wait(sscondition[s1]+s2,ssmutex[s1]+s2);
+//      save_identifier_string("TYD");
+  const char * str4;
+  str4="TYD";
+  char* strx4=const_cast <char*> (str4);
+  save_identifier_string(strx4);
+    save_int_value(sno);
+    save_int_value(tn2);
+//      save_identifier_string("ED");
+  const char * str5;
+  str5="ED";
+  char* strx5=const_cast <char*> (str5);
+  save_identifier_string(strx5);
+    save_pointer_value(this);
+//      save_identifier_string("CY");
+  const char * str6;
+  str6="CY";
+  char* strx6=const_cast <char*> (str6);
+  save_identifier_string(strx6);
+    gradient_structure::GRAD_STACK1->
+        set_gradient_stack(::adjoint_adwrite_lock_buffer_2);
+  }
+}   
+
+void adpthread_manager::cwrite_lock_buffer(int sno)
+{
+  if (logflag)
+  {
+    //*(logfiles[0]) << " write_lock_buffer_master"   << endl;
+    //adt[0].get_elapsed_time_and_reset();
+  }
+  int tn2=ad_comm::pthread_manager->get_slave_number();
+  int s1,s2;
+  if (tn2==sno)
+  {
+    //cerr << "Error -- process can not write to itself" << endl;
+    ad_exit(1);
+  }
+  else if (tn2<sno)  // old master write to slave
+  {
+    s1=tn2;
+    s2=sno;
+    pthread_mutex_lock(ssmutex[s1]+s2);
+    // only write if buffer empty
+    while (smflag(s1,s2) == 1 || ssflag(s1,s2) ==1 ) 
+      pthread_cond_wait(smcondition[s1]+s2,ssmutex[s1]+s2);
+  }
+  else if (sno<tn2)  // old slave write to master
+  {
+    s2=tn2;
+    s1=sno;
+    pthread_mutex_lock(ssmutex[s1]+s2);
+    // only write if buffer empty
+    while (smflag(s1,s2) == 1 || ssflag(s1,s2) ==1 ) 
+      pthread_cond_wait(sscondition[s1]+s2,ssmutex[s1]+s2);
+  }
+}   
+
+void adjoint_adwrite_lock_buffer_1(void)
+{
+  verify_identifier_string("CT");
+  adpthread_manager * ptr=(adpthread_manager*)(restore_pointer_value());
+  ptr->adjoint_adwrite_lock_buffer_1();
+}
+
+void adpthread_manager::adjoint_adwrite_lock_buffer_1(void)
+{
+  //unlock read buffer slave
+   //cout  << "adjoint_write_lock_buffer_master(void)" << endl;
+  verify_identifier_string("OD");
+  int tn2=restore_int_value();
+  int sno=restore_int_value();
+  if (tn2>=sno)
+  {
+    cerr << "This can't happen" << endl;
+    ad_exit(1);
+  }
+  int s1,s2;
+  s1=tn2;
+  s2=sno;
+  scurrent_bptr[s1][s2]=stransfer_buffer[s1][s2];
+  verify_identifier_string("YX");
+  // !!!!!!!!!!!!!!!!!!!!
+  //pthread_cond_signal(mcondition+sno);
+  pthread_cond_signal(sscondition[s1]+s2);
+  pthread_mutex_unlock(ssmutex[s1]+s2) ;
+  if (logflag)
+  {
+    MY_DOUBLE_TYPE tm=adt[0].get_elapsed_time_and_reset();
+    //*(logfiles[0]) << tm << " adjoint_write_lock_buffer_master"   << endl;
+  }
+}
+
+void adjoint_adwrite_lock_buffer_2(void)
+{
+  verify_identifier_string("CY");
+  adpthread_manager * ptr=(adpthread_manager*)(restore_pointer_value());
+  ptr->adjoint_adwrite_lock_buffer_2();
+}
+
+void adpthread_manager::adjoint_adwrite_lock_buffer_2(void)
+{
+  //unlock read buffer slave
+   //cout  << "adjoint_write_lock_buffer_slave(void)" << endl;
+  verify_identifier_string("ED");
+  int tn2=restore_int_value();
+  int sno=restore_int_value();
+  if (sno>=tn2)
+  {
+    //cerr << "This can't happen" << endl;
+    ad_exit(1);
+  }
+  int s1,s2;
+  s1=sno;
+  s2=tn2;
+  scurrent_bptr[s1][s2]=stransfer_buffer[s1][s2];
+  verify_identifier_string("TYD");
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  pthread_cond_signal(smcondition[s1]+s2);
+  pthread_mutex_unlock(ssmutex[s1]+s2) ;
+  if (logflag)
+  {
+    MY_DOUBLE_TYPE tm=adt[sno].get_elapsed_time_and_reset();
+    //*(logfiles[sno]) << tm << " adjoint_write_lock_buffer_slave"   << endl;
+  }
+}
+void adjoint_adwrite_unlock_buffer_1(void);
+void adjoint_adwrite_unlock_buffer_2(void);
+
+void adpthread_manager::write_unlock_buffer(int sno)
+{
+  // we should be using the mutexes from the class
+  // to get rid of global variables
+  int tn2=ad_comm::pthread_manager->get_slave_number();
+  int s1,s2;
+  if (tn2==sno)
+  {
+    //cerr << "Error -- process can not write to itself" << endl;
+    ad_exit(1);
+  }
+  else if (tn2<sno)  // old master write to slave
+  {
+    s1=tn2;
+    s2=sno;
+    scurrent_bptr[s1][s2]=stransfer_buffer[s1][s2];
+    smflag(s1,s2) = 1;
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+    pthread_cond_signal(sscondition[s1]+s2);
+    pthread_mutex_unlock(ssmutex[s1]+s2);
+//      save_identifier_string("SH");
+  const char * str7;
+  str7="SH";
+  char* strx7=const_cast <char*> (str7);
+  save_identifier_string(strx7);
+    save_int_value(sno);
+    save_int_value(tn2);
+//      save_identifier_string("KW");
+  const char * str8;
+  str8="KW";
+  char* strx8=const_cast <char*> (str8);
+  save_identifier_string(strx8);
+    save_pointer_value(this);
+//      save_identifier_string("ZD");
+  const char * str9;
+  str9="ZD";
+  char* strx9=const_cast <char*> (str9);
+  save_identifier_string(strx9);
+    gradient_structure::GRAD_STACK1->
+      set_gradient_stack(::adjoint_adwrite_unlock_buffer_1);
+    if (logflag)
+    {
+      MY_DOUBLE_TYPE tm=adt[0].get_elapsed_time_and_reset();
+     // *(logfiles[0]) << tm << " write_unlock_buffer_master" << endl;
+    }
+  }
+  else if (sno<tn2)  // old slave write to master
+  {
+    s2=tn2;
+    s1=sno;
+    scurrent_bptr[s1][s2]=stransfer_buffer[s1][s2];
+    ssflag(s1,s2) = 1;
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    pthread_cond_signal(smcondition[s1]+s2);
+    pthread_mutex_unlock(ssmutex[s1]+s2);
+//      save_identifier_string("UD");
+  const char * str10;
+  str10="UD";
+  char* strx10=const_cast <char*> (str10);
+  save_identifier_string(strx10);
+    save_int_value(sno);
+    save_int_value(tn2);
+//      save_identifier_string("CD");
+  const char * str11;
+  str11="CD";
+  char* strx11=const_cast <char*> (str11);
+  save_identifier_string(strx11);
+    save_pointer_value(this);
+//      save_identifier_string("CZ");
+  const char * str12;
+  str12="CZ";
+  char* strx12=const_cast <char*> (str12);
+  save_identifier_string(strx12);
+    gradient_structure::GRAD_STACK1->
+        set_gradient_stack(::adjoint_adwrite_unlock_buffer_2);
+    if (logflag)
+    {
+      MY_DOUBLE_TYPE tm=adt[sno].get_elapsed_time_and_reset();
+      //*(logfiles[sno]) << tm  <<  " write_unlock_buffer_slave" << endl;
+    }
+  }
+}   
+
+void adpthread_manager::cwrite_unlock_buffer(int sno)
+{
+  // we should be using the mutexes from the class
+  // to get rid of global variables
+  int tn2=ad_comm::pthread_manager->get_slave_number();
+  int s1,s2;
+  if (tn2==sno)
+  {
+    //cerr << "Error -- process can not write to itself" << endl;
+    ad_exit(1);
+  }
+  else if (tn2<sno)  // old master write to slave
+  {
+    s1=tn2;
+    s2=sno;
+    scurrent_bptr[s1][s2]=stransfer_buffer[s1][s2];
+    smflag(s1,s2) = 1;
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+    pthread_cond_signal(sscondition[s1]+s2);
+    pthread_mutex_unlock(ssmutex[s1]+s2);
+    if (logflag)
+    {
+      MY_DOUBLE_TYPE tm=adt[0].get_elapsed_time_and_reset();
+     // *(logfiles[0]) << tm << " write_unlock_buffer_master" << endl;
+    }
+  }
+  else if (sno<tn2)  // old slave write to master
+  {
+    s2=tn2;
+    s1=sno;
+    scurrent_bptr[s1][s2]=stransfer_buffer[s1][s2];
+    ssflag(s1,s2) = 1;
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    pthread_cond_signal(smcondition[s1]+s2);
+    pthread_mutex_unlock(ssmutex[s1]+s2);
+    if (logflag)
+    {
+      MY_DOUBLE_TYPE tm=adt[sno].get_elapsed_time_and_reset();
+      //*(logfiles[sno]) << tm  <<  " write_unlock_buffer_slave" << endl;
+    }
+  }
+}   
+
+void adjoint_adwrite_unlock_buffer_1(void)
+{
+  verify_identifier_string("ZD");
+  adpthread_manager * ptr=(adpthread_manager*)(restore_pointer_value());
+  ptr->adjoint_adwrite_unlock_buffer_1();
+}
+
+void adpthread_manager::adjoint_adwrite_unlock_buffer_1(void)
+{
+  if (logflag)
+  {
+    adt[0].get_elapsed_time_and_reset();
+  }
+  // cout  << "adjoint_write_unlock_buffer_master(void)" << endl;
+  verify_identifier_string("KW");
+  int tn2=restore_int_value();
+  int sno=restore_int_value();
+  if (tn2>=sno)
+  {
+    cerr << "This can't happen" << endl;
+    ad_exit(1);
+  }
+  int s1,s2;
+  s1=tn2;
+  s2=sno;
+  verify_identifier_string("SH");
+  //read_lock_buffer_master(sno);
+  pthread_mutex_lock(ssmutex[s1]+s2);
+  // only read if buffer full and data is for you
+  // cout  << endl << "XX sflag[sno] = " << ssflag[sno] << endl;
+  while (ssflag(s1,s2) == 0) 
+    pthread_cond_wait(smcondition[s1]+s2,ssmutex[s1]+s2);
+  ssflag(s1,s2)=0; 
+}
+
+void adjoint_adwrite_unlock_buffer_2(void)
+{
+  verify_identifier_string("CZ");
+  adpthread_manager * ptr=(adpthread_manager*)(restore_pointer_value());
+  ptr->adjoint_adwrite_unlock_buffer_2();
+}
+
+void adpthread_manager::adjoint_adwrite_unlock_buffer_2(void)
+{
+  // cout  << "adjoint_write_unlock_buffer_slave(void)" << endl;
+  verify_identifier_string("CD");
+  int tn2=restore_int_value();
+  int sno=restore_int_value();
+  if (sno>=tn2)
+  {
+    cerr << "This can't happen" << endl;
+    ad_exit(1);
+  }
+  int s1,s2;
+  s1=sno;
+  s2=tn2;
+  pthread_mutex_lock(ssmutex[s1]+s2);
+  scurrent_bptr[s1][s2]=stransfer_buffer[s1][s2];
+  if (logflag)
+  {
+    adt[sno].get_elapsed_time_and_reset();
+  }
+  verify_identifier_string("UD");
+  // we should be using the mutexes from the class
+  // to get rid of global variables
+  // only write if buffer empty
+  while (smflag(s1,s2) == 0) 
+    pthread_cond_wait(sscondition[s1]+s2,ssmutex[s1]+s2);
+  smflag(s1,s2)=0;
+}

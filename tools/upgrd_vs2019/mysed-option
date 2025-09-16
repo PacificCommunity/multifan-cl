@@ -1,0 +1,4 @@
+sed -f sed-no-long-option $1 > tt
+#MYFILE=`basename $1`
+#echo ${MYFILE}
+#cp tt ${MYFILE}

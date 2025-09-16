@@ -1,0 +1,1894 @@
+---------------
+1.1 VERSION HISTORY
+===================
+- July 9 2025 -
+This version of MULTIFAN-CL updates that of November 22 2024, with a major
+revision. See section 3.1 RELEASE HISTORY below for details.
+
+Invoking the MULTIFAN-CL executable with the --version argument now returns the
+following string on the command line:
+Version number: 2.2.7.6
+
+1.2 KNOWN ISSUES IN THIS RELEASE
+===============================
+1.2.1 GLOBAL
+As with the previous version, no executables are provided in 32-bit
+architecture. Given the use of this architecture by population modellers is
+almost obsolete, it was not considered essential to provide 32-bit versions.
+Should users require this, they may contact the developers directly via the
+MULTIFAN-CL website to make a request.
+
+The problem still exists with the tagging data likelihood when the option for
+the negative binomial term is selected (parest_flag(111) = 3). Although a
+likelihood is produced, it is not certain whether this is correct according
+to the formulation. It is recommended to use the option for the negative
+binomial that has been revised in this version (parest_flag(111) = 4). The
+possible problems with using parest_flag(111) = 3 will be rectified in a future
+release.
+
+This version is backwardly compatible with the ini input file in the old format
+that lack the first two lines:
+# ini version number
+1000 to 1007
+If these lines are missing, the old file format is assumed that omits the
+input of tag reporting flags. If version number 1000 is supplied the old format
+is assumed, and if version number 1001 is supplied the new format is assumed
+with input of the tag reporting flags.
+Note that a version number < 1000 will cause the program to fail since this will
+be taken to be number of age classes.
+
+1.2.2 MICROSOFT WINDOWS
+As for earlier versions, this version of MULTIFAN-CL requires a number of
+dynamic link library (DLL)files for the Windows executable to operate. It
+accesses the following dependent DLLs:
+
+  vcruntime140.dll
+  libgfortran-3.dll
+  libgcc_s_seh-1.dll
+  pthreadVCE2.dll
+  libopenblas.dll
+  libwinpthread-1.dll
+  libquadmath-0.dll
+
+These are not normally located in C:/WINDOWS/ so the files are distributed with
+the MULTIFAN-CL executable downloaded from the repository. This may be
+rectified in a subsequent release.
+
+The license conditions associated with each DLL is as follows.
+
+1.2.2.1 vcruntime140.dll
+This Visual Studio DLL is provided by the Visual Studio 2015 - 2022
+redistributable package, and its use and distribution is governed by the
+Microsoft Software License Terms.
+
+https://visualstudio.microsoft.com/license-terms/mlt031819/
+
+The most relevant clause in this license relating to this distribution is:
+
+b. Organizational License - that allows any number of users to use the
+software to develop and test applications released under an Open Source
+Initiative (OSI) approved open source software license; which applies to
+the public MULTIFAN-CL project.
+
+1.2.2.2 libgfortran-3.dll
+This DLL is produced by the gfortran project, where the GPL license applies
+with a Special Library Exception, that allows the library to be linked with
+other programs provided that some specific conditions are met. The license
+is found at:
+
+https://docs.vertica.com/11.1.x/en/third-party/libgfortran/#license
+
+According to the terms of this license, the above link to the original licensor
+is provided here for any recipient of the public version of MULTIFAN-CL to be
+informed of the conditions of the original license.
+
+1.2.2.3 libgcc_s_seh-1.dll
+This DLL is of the libgcc project that is part of the Gnu Compiler Collection
+(GCC) project which is licensed under the GPLv3. The license statement is
+found at:
+
+https://gcc.gnu.org/onlinedocs/libstdc++/manual/appendix_gpl.html
+
+The source code for this DLL can be found at:
+
+https://gcc.gnu.org/
+
+1.2.2.4 pthreadVCE2.dll
+This DLL implements POSIX Threads for Windows under an open-source project
+Pthreads-win32 which is hosted by SourceForge at:
+
+https://sourceforge.net/p/pthreads4w/wiki/Home/
+
+Pthreads-win32 is covered by the GNU Lesser General Public License, and the
+license is available at:
+
+https://resources.cranksoftware.com/cranksoftware/v7.0.0/license/
+webhelp/ch02s03s17.html
+
+1.2.2.5 libopenblas.dll
+The OpenBlas project may be found at:
+
+http://www.openmathlib.org/OpenBLAS/
+
+Use of this project's components is governed by BSD license:
+
+https://github.com/OpenMathLib/OpenBLAS/blob/develop/LICENSE
+
+Accordingly, the OpenBlas copyright can be found at the project URL above.
+
+1.2.2.6 libwinpthread-1.dll
+This DLL forms part of a runtime environment for gcc executables on Windows,
+and is produced from an Open Source project hosted on SourceForge:
+
+https://sourceforge.net/p/mingw-w64/mingw-w64/ci/master/tree/
+mingw-w64-libraries/winpthreads/
+
+It is MIT licensed:
+
+https://opensource.org/license/MIT
+
+which does not impose a particular license on this application, providing the
+mingw-w64 project copyright is made available at the winpthreads
+project URL above.
+
+1.2.2.7 libquadmath-0.dll
+This DLL is from the libgcc project that is part of the GCC project. The
+source is found at GCC's project:
+
+https://gcc.gnu.org/
+
+The GCC License statement is (as for 1.2.2.3. above):
+
+https://gcc.gnu.org/onlinedocs/libstdc++/manual/appendix_gpl.html
+
+The source code for this DLL can be found at the project URL above.
+
+1.2.3 LINUX
+No specific changes from previous release.
+
+1.2.4 MULTIFAN-CL Viewer
+In the case of single sex/species models, there is no change to the operation
+of the Viewer.
+
+The Viewer currently does support most aspects of multi-sex/species models, and
+further improvements to this capability will be made in subsequent versions.
+
+2 TROUBLESHOOTING
+-----------------
+2.1 MICROSOFT WINDOWS
+=====================
+2.1.1 ACCESS TO MICROSOFT VISUAL STUDIO DLLs
+The dynamic libraries listed above are required in order to run the MULTIFAN-CL
+Windows executable. These files are distributed with the MULTIFAN-CL executable
+downloaded from the website.
+
+When running MFCL and this DLL is missing, an error dialog box titled
+"mfclo64.exe - Unable to Locate Component" may appear on screen with the
+following message:
+"This application has failed to start because *.dll ... was not found.
+Re-installing the application may fix this problem".
+
+2.1.2 CANNOT RUN ON VISTA, ADVANCED SERVER 2008 AND 7
+On the Microsoft Windows Vista, Windows Advanced Server 2008 and Windows 7, you
+have to define an environment variable called ADTMP1 before running the program.
+This variable must contain the path to a writable directory where mfcl can
+output temporary gradient files. The path contained in this variable must be
+valid and must not be longer than 55 characters.
+
+Please refer to the MULTIFAN-CL User Manual for more information on this
+subject.
+
+2.1.3 CANNOT RUN ON WINDOWS 2000, XP AND ADVANCED SERVER 2003 WHEN NOT
+ADMINISTRATOR
+When you are running mfcl on Microsoft Windows 2000, Windows XP and Windows
+Advanced Server 2003 and you are not an administrator on the computer, you must
+define a variable called ADTMP1 as described in section 2.1.2
+
+2.2 LINUX
+=========
+No substantive problems with running the LINUX executable since the previous
+release.
+
+
+You may need to access the following files to get some more
+information on MFCL :
+
+1 GENERAL INFORMATION
+=====================
+
+LICENSE - contains important information about the license of this
+program.
+
+COPYRIGHT - contains the copyright notice of this program.
+
+RELEASE_NOTES - contains the latest information about this program.
+
+INSTALLATION & COMPILATION
+==========================
+
+COMPILATION OF MULTIFAN-CL USING THE OPEN SOURCE REPOSITORY - this is not
+supported by the Open source repository as it does not contain the dependent
+libraries required. The MULTIFAN-CL executables can be obtained from the
+website:
+https://github.com/PacificCommunity/multifan-cl/
+
+
+USER MANUAL
+===========
+The User's Guide is located in the manual directory.
+
+
+
+--------------------------------------------------------------------------------
+3.1 RELEASE HISTORY
+===================
+
+Changes in Multifan-CL version : 2.2.7.6
+
+New features
+-----------------
+No new features have been added
+
+
+Revisions
+---------
+The following revisions were made:
+
+- Added the orthogonal-polynomial coefficients to the indepvar.rpt
+
+- Tags inform movement - reinstated the grouped case
+
+- Estimation of the size composition self-scaling multinomial likelihood
+  with random-effects (SSMULT-AUAU) - instated estimation of the variance
+  exponent multiplier coefficient parameter
+
+- New report "fishmort2" with headers and indices for the fish_mort output
+
+- CPUE likelihood extended to the multi-species/sexes case - entails
+  accommodating fishery data, specifically catches and survey fishery indices,
+  that are aggregated among species/sexes, and to apportion them according to
+  the model predicted sex-ratios of vulnerable numbers at age for deriving the
+  Newton-Raphson solution for fishing mortality and the predicted CPUE indices.
+
+- Catch-conditioned Operating Model projections with all projection fisheries
+  being effort-conditioned - requires employing the predictions of the
+  catchability regression for all projection time periods.
+
+- Reconciled the action of age_flags(177) for initial equilibrium population
+  calculations when the orthogonal-polynomial recruitment parameterisation is
+  active
+
+- New output files needed for reproducing the original input survey fishery
+  indices are output from the final model evaluation for reporting:
+  "cpue_obs_mls" and "cpue_pred_mlv"
+
+- Implementation of the Richards growth curve - mean_length correction, and
+  gamma parameter input from .ini file version 1005; added gamma to the
+  indepvar.rpt
+
+- Extensions to multi-sex case:
+
+  * correction for movement coefficients input via a file
+
+  * assignments of sex-specific Lorenzen natural mortality as estimated
+
+  * indexed sex-specific fisheries to the input of conditional age-length
+    observations
+
+  * shared selectivity at length includes the estimated independent von
+    Bertalanffy growth offsets
+
+- Extensions to length-based selectivity:
+
+  * implementation of fish_flags(75) case - young ages have selectivity = 0
+
+  * implementation of case: fish_flags(57)=0 and fish_flags(3)< maximum age;
+    older age classes have selectivity = 0
+
+  * implementation of case: fish_flags(57)=0 and fish_flags(16)= 1;
+    non-decreasing selectivity
+
+- Initial equilibrium survival rate - scalar of natural mortality is assigned
+  from age_flags(128)/100 to allow finer resolution; WARNING - not yet
+  backwardly compatible for solutions obtained with versions < 2.2.7.5
+
+- Independent control of the ests.rep and *.fit output file generation
+
+- Upgrades to the input \emph{.ini} file:
+
+  * version 1005 - input of the Richards growth gamma parameter
+
+  * version 1006 - input of the intital total population scalar parameter value
+
+  * version 1007 - input of the tag_flags assignments with warnings relating
+    to implausible tag mixing assumptions
+
+- upgraded screen output error messages to be more informative
+
+Fixes
+------
+The following corrections were made:
+
+- Correction to length-based selectivity estimation for models without weight
+  frequency data.
+
+
+Versioning
+---------------
+This release represents a minor revision to the version and therefore the
+version number has been changed to: 2.2.7.6
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version : 2.2.7.2
+
+New features
+-----------------
+The following new features have been added:
+
+- Independent variables report - developed for the production of a
+  consolidated parameter output file that contains:
+
+  * The parameter index number and a text descriptor (as in xinit.rpt but
+    corrected to deal with selectivity grouping)
+
+  * The parameter estimate, as provided by the model fit
+
+  * The final gradient
+
+  * The standard deviation
+
+  * Bounds applied for the parameter
+
+  * This entailed dove-tailing the assignments to the independent variable
+    vector (indep_var) consistent with the minimizing routine's assignments to
+    the x-vector.
+
+  * Conditional on the model evaluation being that for generating the reports,
+    a new routine was created to write the report indepvar.rpt being the new
+    consolidated report.
+
+- Orthogonal-polynomial mean regional recruits distribution penalty - A feature
+  was developed that enables fixing the mean distribution of recruitments
+  among regions to prior assumed values while employing the
+  orthogonal-polynomial recruitment parameterization.
+
+- Simulation projections of the catch-conditioned model
+
+  * Simulated effort for catch-conditioned projection fisheries. A method was
+    developed that entails deriving predicted effort for catch-conditioned
+    projection fisheries, based upon the terminal period catchabilities derived
+    from a fitted catchability regression, and the Newton-Raphson solution for
+    fishing mortality in each of the projection periods.
+
+  * A new output file was generated for simulation CPUE pseudo-observations
+    without error; file ``cpue_sim_true''.
+
+  * Added an option for applying the model ``observed'' catchabilities for
+    projections with effort-conditioned fisheries. This is an enhancement to
+    the feature for undertaking population projections under the assumption of
+    constant catchabilities in the projection periods that are equivalent to
+    those of the terminal year of the estimation model time periods.
+
+
+Revisions
+---------
+The following revisions were made:
+
+- Catch-conditioned model CPUE likelihood - Redefined fish_flags(92) for the
+  non-concentrated CPUE likelihood from being the penalty weight, to be the
+  CV/100.
+
+- Reconciliation of likelihood components report
+
+  * The reporting of the likelihood components report ("test_plot_output") was
+    corrected to reconcile its components with the total integrated
+    log-likelihood of the function evaluation as used in the minimization
+    procedure, and which is reported to the screen output report.
+
+  * Numerous code corrections and modifications were made to the recruitment
+    penalties, the total catch likelihood term, and to the assignments made
+    from the SSMULT size composition likelihood.
+
+- A non-decreasing penalty function was added for time-block selectivity
+  estimation. The existing feature for imposing a constraint upon selectivity
+  estimates to be non-decreasing was extended to the case of time-block
+  selectivity estimation.
+
+- Correction made that appropriately accounts for the case of annual
+  recruitment occurring in months other than month 1 (January). This
+  flexibility is necessary for the feature that applies the predictions from
+  the catchability regression for their assignment in projections with
+  effort-conditioned fisheries, and the corresponding selectivity temporal
+  structures.
+
+- An alternative approach for fitting the catchability regression was conceived
+  that retains as intact the diagnostic case model solution (i.e., to keep
+  all the independent variables fixed at their estimated values), but to add
+  in a subsequent phase the estimation of only the "internal" regression for
+  the catchability relationship in respect of the model's implicit fishery
+  catchabilities.
+
+- Lorenzen parameter estimation - to include the estimated von Bertalanffy
+  growth offsets into the derivation of the Lorenzen formulation of natural
+  mortality at age.
+
+- New section for MULTIFAN-CL compilation version to .par file - Reporting the
+  MULTIFAN-CL compilation version number (e.g., 2.2.7.2) to the *.par report.
+  To maintain backward comparability with older *.par file versions, the file
+  version number (in parest_flags(200)) was increased from 1066 to 1067.
+
+
+Fixes
+------
+The following corrections were made:
+
+- Correction to the output report plot.rep section "\# Exploitable
+  population in same units as catch by fishery (down) and year-season (across)"
+  such that it is expressed in numbers of fish where relevant.
+
+- Correction to the self-scaling multinomial likelihood (SSMULT) for the
+  observed compositions that were being over-written via a copy constructor
+  assignment.
+
+- Correction to remove the duplication of the recruitment penalty
+  calculation among both sexes in a multi-sex model, but rather to
+  calculate the penalty for only the female sex.
+
+- Correction to avoid an arithmetic exception (divide by zero) in the
+  logistic selectivity calculations during a minimisation when parameter
+  estimates approached an extreme (and implausible) value.
+
+
+Versioning
+---------------
+This release represents a major revision to the version and therefore the
+version number has been changed to: 2.2.7.2
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version : 2.2.5.0
+
+New features
+-----------------
+The following new features have been added:
+
+- Simulated CPUE pseudo-observations - A feature was developed that
+  generates simulation CPUE pseudo-observations for survey index fisheries
+  of a catch-conditioned model for both the estimation and projection time
+  periods.
+
+- Abbreviated derivatives calculation of dependent variables - The
+  parest_flags(37)=1 option was assigned that "leap-frogs" through
+  parts of the default list of dependent variables (dep_vars) to only
+  calculate the derivatives for an abbreviated, essential set of dep_vars
+  required for reports. This feature reduces the dep_vars to include only
+  the MSY reference points: F_recent/F_MSY, SB_recent/SB_F=0, and
+  SB_recent/SB_MSY, thus reducing processing time to less than 1 minute
+  rather than up to 11 hours for some complex models.
+
+
+Revisions
+---------
+The following revisions were made:
+
+- Catch-conditioned model CPUE likelihood:
+
+  * A feature was added for grouped survey fisheries that share the same
+    stationary catchability, to have the capability for non-shared penalty
+    weights.
+
+  * The concentrated form of the CPUE negative log-likelihood was implemented
+    where time-variant index-specific precision is available. This formulation
+    also included the capability for non-shared penalty weights
+
+  * Stock assessment modelling previous to this version has employed the
+    non-concentrated formulation implemented in the code that excluded the
+    constant term - being the variance summation. The correct formulation was
+    implemented that includes the constant term.
+
+- von Bertalanffy and Richards growth variance calculations:
+
+  * The method for calculating the variance of mean length-at-age derived from
+    the von Bertalanffy and Richards growth functions was corrected. This
+    ensures the log-linear relationship between the standard deviation and the
+    re-scaled mean length-at-age; the global variables were correctly assigned
+
+  * The assigned parest_flags(34) set to 1 enables backward compatibility with
+    previous versions and replication of earlier model solutions.
+
+- Reversed the action of parest_flags(387) such that the default setting = 0
+  implements the independent variable scaling options of the earlier versions.
+  These scaling settings produce better minimisation performance.
+
+- Implemented a new minimisation scaling factor for the Lorenzen parameter equal
+  to 200 that produces better minimisation performance.
+
+- Lorenzen parameter estimation allowed for starting the minimisation from
+  initial assumed values supplied in the .par file
+
+- Implemented a new lower bound = -500 on the catchability regression
+  parameters that offers robust parameter estimation for extremely low absolute
+  values of observed standardised effort data.
+
+- New section for first model year to .par file - For ease of use in FLR4MFCL,
+  a new section was added to the .par file format that displays the first
+  calendar year of the model's estimation periods. To maintain backward
+  compatibility of older .par file versions, the file version number
+  (in parest_flags(200)) has been increased from 1065 to 1066.
+
+
+Fixes
+------
+The following corrections were made:
+
+- Dirichlet-Multinomial size composition likelihoods in test\_plot\_output
+  components report
+
+  * A correction was made that prevents the zero-fishing mortality model
+    evaluation from incrementing the Dirichlet-Multinomial no-random-effects
+    likelihood (DM-like) component in the report.
+
+  * A correction was made that prevents the DM-like components being
+    incremented every time a minimisation restart occurs during an unstable
+    fitting procedure.
+
+  * These corrections have been applied to both length- and weight-frequency
+    DM-like calculations, and both with, and without, tail-compression.
+
+
+Versioning
+---------------
+This release represents a major revision to the version and therefore the
+version number has been changed to: 2.2.5.0
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version : 2.1.0.0
+
+New features
+-----------------
+The following new features have been added:
+
+- Length-based selectivity method:
+
+  * Data structures in the feature were upgraded to be consistent with the
+    time-variant selectivity parameterization applied to MULTIFAN-CL in 2015
+
+  * The reports to *.fit files were made consistent with those of predicted
+    length- and weight-frequencies (LF and WF, respectively)
+
+  * The reports to *.fit files were made consistent with those of predicted
+    length- and weight-frequencies (LF and WF, respectively)
+
+  * Added the assignment to the time-variant selectivity-at-age for the
+    WF application
+
+  * Reporting to the plot.rep uses the correct selectivity-at-age from
+    length-based selectivity feature
+
+  * Code adjustments were applied for testing possible offsets to the anomalies
+    in the implementation
+
+  * Using the global wm2 variable was implemented as the default case
+
+  * The code for implementing the cohort-strength covariate was reviewed,
+    described, and a correction was made such that the recruitment estimates
+    were available for making the assignments to relative year class strengths.
+    This was done for both possible recruitment parameterisations (mean+deviate
+    and orthogonal-polynomial)
+
+
+Revisions
+---------
+The following revisions were made:
+
+- Reversed the sign of the total log-likelihood reported to the *.par report
+  (to be the true negative log-likelihood as on the screen output)
+
+
+Fixes
+------
+The following corrections were made:
+
+- Modifications as were required for the Visual Studio 2019 compilation
+
+
+Versioning
+---------------
+This release represents a major revision to the version and therefore the
+version number has been changed to: 2.1.0.0
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version : 2.0.8.7
+
+New features
+-----------------
+No new features have been added
+
+
+Revisions
+---------
+The following revisions were made:
+
+- Catch-conditioned projections:
+
+  * Correctly specified the F0eval calculations for the estimation periods
+
+  * Implemented deterministic projections with effort-conditioned fisheries
+
+  * Implemented stochastic projections with both BH-SRR deviate or absolute
+    recruitment options, with correction to assignments to the deviates variable
+
+- Zero-fishing mortality model evaluation (F0eval):
+
+  * For the case of N_init derived using natural mortality only, the
+    multiplier is disabled by default for the F0eval.
+
+  * Implementation of the recruitment compensation with respect to unfished
+    adult biomass for the catch-conditioned method.
+
+- Hessian reports:
+
+  * Added log-scale MSY-related dependent variables in the correlation report
+
+  * Added SB_recent depletion ratio dependent variable in the variance and
+    correlation reports, *.var and *.cor
+
+
+Fixes
+------
+The following corrections were made:
+
+- Catch-errors projections - Corrections to the stochastic projections using
+  the random absolute recruitment option.
+
+- Orthogonal-polynomial recruitments:
+
+  * Correction to make the method robust to a projection scenario
+
+  * Exclude the first year-effect coefficient from the normal prior penalty
+    calculation
+
+- Zero-fishing mortality model evaluation (F0eval) - correction to zeroing
+  out log-effort for the initial survival rate calculation.
+
+- Hessian reports - Correction to the depletion ratio dependent variables
+  in the correlation report.
+
+
+Versioning
+---------------
+This release represents a minor revision to the version and therefore the
+version number has been changed to: 2.0.8.7
+
+--------------------------------------------------------------------------------
+
+
+Changes in Multifan-CL version : 2.0.8.5
+
+New features
+-----------------
+The following new features have been added:
+
+- Long-term tag loss:
+
+  * Implementation for within the catch-errors and catch-conditioned methods
+
+  * Application during mixing periods
+
+  * Input and application for the -makepar operation
+
+
+Revisions
+---------
+The following revisions were made:
+
+- CPUE likelihood - CPUE regression variables included in the plot.rep report
+
+- Hessian reports:
+
+  * Correlation report includes F0eval dependent variables
+
+
+Fixes
+------
+The following corrections were made:
+
+- Zero-fishing mortality model evaluation (F0eval) - Correction to initial
+  survival assignment for the N\_init calculation
+
+- Likelihood report (test_plot_output) - Correction to the Dirichlet-Multinomial
+  terms being reported
+
+- Correction to the dependent variables in the *.var report
+
+- Catch-conditioned method:
+
+  * Correction to include catchability regression penalty conditional upon
+    parest_flags(378)
+
+  * Correction to equilibrium initial population number of movements per
+    season in respect of age_flags(57)
+
+  * Correction to case of N_init derived using natural mortality only
+
+  * Correction to the initial equilibrium population as obtained using the
+    catch-conditioned method for fishing mortality estimation, and under the
+    zero-fishing mortality model evaluation.
+
+  * Correction to the ungrouped CPUE likelihood penalty weight
+
+  * Correction to the formulation of the concentrated CPUE likelihood
+
+- Selectivity-at-age - Correction for simple spline option for maturity at
+  length for values >0 and <1
+
+
+Versioning
+---------------
+This release represents a major revision to the version and therefore the
+version number has been changed to: 2.0.8.5
+
+--------------------------------------------------------------------------------
+
+Changes in Multifan-CL version : 2.0.8.2
+
+New features
+-----------------
+The following new features have been added:
+
+- Catch-conditioned method:
+  * Implemented the student-t regression option for the catchability
+  relationship with output of the
+  estimated sigma; implemented a fixed variance option for the
+  catchability regression using a robust-normal mixture regression activated by
+  parest_flags(362); trialled the iterative least-squares regression
+  (ILSR_fml_effort) for solving for the catchability relationship parameters,
+  activated by parest_flags(396).
+
+  * Calculation of the predicted effort associated with the Newton-Raphson
+  estimated fishing mortalities, with a report of the predicted CPUE.
+
+  * Included robustness to excessive fishing mortalities (Zmax_fish): added a
+  penalty for instances of fishing mortalities exceeding a fraction of
+  Zmax_fish (Zcut_max) specified by age_flags(189), and for projection
+  periods with missing catch; and, initialised and refined the Zmax_fish
+  values to achieve minimisation stability.
+
+  * Added capability for survey fisheries (non-extraction) with a
+  likelihood term for the associated CPUE indices activated and with
+  penalty weights using fish_flags(92); calculation of mid-period vulnerable
+  numbers-at-age; excluded survey fisheries from the Newton-Raphson
+  estimation and catchability regression calculations; allowed for CPUE
+  indices in respect of fish numbers or biomass; implemented the option
+  for a concentrated likelihood weighted by observation-specific variance
+  estimates; included the grouped case (allows a stationary catchability
+  option among fisheries/regions) for the CPUE likelihood calculation
+  activated by grouping fish_flags(99) and the index is calculated in
+  respect of the effort units as input from fisheries data in .frq
+  to preserve the relativity among fisheries; output of obs/pred CPUE indices
+  to reports, and for the survey index likelihood assignment to a ppstf member
+  for inclusion in the test_plot_output report.
+
+  * Refined the initial survival assignments for the catch-conditioned and
+  catch-errors cases; included a program developer's option to hard-wire
+  initial survival=0.8 for code testing, activated by parest_flags(394);
+  added the option for the initial population calculations to be based only
+  upon natural mortality; refinements to the penalties on initial survival rate
+  estimates; set default penalty weights for the catch-conditioned parameters
+  conditional upon parest_flags(379) and parest_flags(383).
+
+  * Sanity checks for the structure of the Gram-Schmidt design matrix for
+  unallocated columns and unavailable effort data for the grouped/ungrouped
+  cases.
+
+  * Refined the method for the zero-fishing model evaluation with initialised
+  fishing mortalities = -70.0; consolidated the partial fisheries impact
+  analysis for the catch-conditioned case such that all those fisheries with
+  assumed zero-fishing mortalities are calculated via the Newton-Raphson with
+  observed catches set to small values (1.e-03);  added the feature for
+  zero-fishing compensation of BH-SRR predicted recruitments (age_flags(171)
+  activates this feature) to the catch-conditioned numbers-at-age calculations
+  in projections.
+
+  * Extended the Missing_catch_report that lists the catches predicted for
+  those incidents lacking observed catches, for the data_flags(1)=0 case
+  (catches in numbers of fish).
+
+
+Revisions
+---------
+The following revisions were made:
+
+- PDH diagnostics - Additional reports for the positivised Hessian diagonals,
+  covariance and correlation matrices of the independent variables.
+
+- Variance calculation of dependent variables:
+
+  * improvement made that uses the Lapack solve routine (lapack_lusolve())
+  that runs significantly faster and makes negligible difference to the
+  variance estimates.
+
+  * The dependent variable SB_latest/mean(SB_f=0)_nyr-9 was added to
+  the *.var report and made robust for multi-species/sexes case, and for the
+  age_flags(57) value. The variable's time periods are for calendar years, not
+  model years (that relate to the recruitment periods), so for example if there
+  are 4 recruitments per calendar year, the SB_latest is the average for the
+  most recent 4 quarters (model years); and, the divisor is the average for the
+  40 quarters prior to the last 4. Similarly, if there is one recruitment per
+  calendar year, SB_latest is that for the most recent year, and the divisor is
+  the average for the 10 years prior to the last year.
+
+- Selectivity: included a penalty on estimated spline coefficients < -15.0.
+
+- Fishing impacts: extended the feature for zero-fishing compensation of
+  BH-SRR predicted recruitments (age_flags(171) activates this feature) to
+  multi-species/sexes.
+
+- Mean+deviates recruitments: totpop_coff lower bound changed from 1 to 8
+  to avoid population crashes in early phase iterations.
+
+- Orthogonal polynomial recruitments: made equivalent the number of degrees
+  of the orthogonal polynomials for recruitment and the number of parameters
+  being estimated, and extended this to the multi-species case; refined the
+  penalty calculations for the polynomial coefficients; made the calculation
+  robust to cases of null-degrees; applies a penalty to the estimated polynomial
+  coefficients.
+
+- Movement parameterisation: added an option for a normal prior penalty on the
+  movement coefficients.
+
+- Age-length data: added a sanity check on input of age-length data that
+  alerts in situations where age_length.* input file data has no matching
+  fishing incidents in the *.frq fisheries input data.
+
+- Percent maturity: implemented a sanity check on input values < 0 and > 1
+  from the *.par and *.ini files; an improved method for normalising the percent
+  maturity vector to between 0 and 1 that will avoid values exceeding this
+  range.
+
+- xinit.rpt: for multi-dimensional parameters the indices for each dimension
+  were included in the parameter listing in respect of the various
+  stratifications or structures assumed in the model, i.e. spatial,
+  species/stock/sex, temporal and fisheries.
+
+- Code pointers: implemented a global fisheries grouping pointer object for
+  better management of grouping options.
+
+
+Fixes
+------
+The following corrections were made:
+
+- calculations using the mean proportional regional recruitment distributions
+  were made robust to avoid arithmetic exceptions for zero values
+
+- calculations of the predicted tag recaptures were made robust to ensure
+  minimisation stability
+
+- corrected a logical if-block for a special case of
+  the equilibrium yield calculations
+
+- ensured robust spline estimates of percent maturity that avoid values
+  <0 and >1;
+
+- sanity checks added for age_flags(57, 94, 95), parest_flags(373,374) and
+  grouping fish_flags(66, 92, 99)
+
+- ensured that initial population calculations based upon only natural
+  mortality were robust to all settings of age_flags(57)
+
+- made robust the constructor of initial survival rate for single region
+  models
+
+- assignment to the multi-species percent maturity to be used for the adult
+  biomass calculation for the reporting of the zero-fishing multi-species case
+
+- the default scalar on tag reporting rate parameter was changed to 10000
+
+- corrections to the min() and max() routines used for the Hessian diagnostics
+
+- ensured the -makepar option does not invoke the feature for the
+  pre-minimisation conversion of mean+deviates recruitments to the
+  orthogonal-polynomial recruitment parameterisation
+
+- correction to the assignment of the total catch likelihood component to
+  the ppstf member for inclusion in the test_plot_output report
+
+- correction to the if-condition upon cases of null-degrees for the
+  orthogonal-polynomial recruitments
+
+- ensured movement processes in initial population calculations are valid only
+  for multi-region cases
+
+- constructor for vulnerable numbers at age was made conditional upon
+  fish_flags(92)
+
+- constructor for catch-conditioned Gram-Schmidt design matrix and calculation
+  of the catchability regression penalty was made conditional upon
+  parest_flags(378)
+
+- assignment to the maximum allowable fishing mortality (Zmax_fish) was
+  made also for the catch-errors method calculations of projection catches
+  that use the Newton-Raphson solution
+
+
+Versioning
+---------------
+This release represents a major revision to the version and therefore the
+version number has been changed to: 2.0.8.2
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version : 2.0.8.0
+
+New features
+-----------------
+The following new features have been added:
+
+- Catch-conditioned method - implementation for fishing mortality calculation,
+including incidents with missing catch, and the calculation of initial
+population conditions based upon assumed average fishing mortalities in the
+initial time periods
+
+- PDH diagnostics - a set of heuristics to evaluate the importance of negative
+Hessian eigenvalues (i.e. a non-positive definite Hessian solution):
+
+  * Calculating correlations among independent variables - added to the
+    parest_flag(145) option for the correlation calculations among the
+    estimated parameters
+
+  * PED - adding fixed values that ``positivises'' the eigenvalue, and
+    recalculating the st.dev of dependent variables
+
+  * Positivizing the Hessian - a method to obtain empirical evidence for
+    relative influence of negative eigenvalues by generating diagonal scalars
+    (square root and square root of the inverse) for the independent
+    variables and re-fitting the model to obtain a PDH solution. A
+    comparison of the dependent variables with the original non-PDH will
+    indicate the relative importance of the negative eigenvalues.
+
+- Stitching parallel Hessian calculations - a new option for
+  parest\_flags(145) to input the individual *.hes files created from a parallel
+  Hessian calculation and ``stitches'' them to produce a single *.hes file
+
+- 128-bit precision - an alternative compilation option that links to the
+  boost libraries for implementing 128-bit double precision calculations
+
+
+Revisions
+---------
+The following revisions were made:
+
+- Conversion among movement parameterisations - the solution .par file now
+  contains the coefficients for the three alternative movement parameterisations
+  that facilitates seamless transitioning among the parameterisations with any
+  input .par file.
+
+- Natural mortality - adjustments to the age-specific estimation to ensure
+  minimisation stability.
+
+- A pre-minimisation conversion of recruitment parameterisation - to convert
+  from an existing solution obtained using the standard mean+deviate
+  parameterisation for recruitments, and to derive the corresponding
+  orthogonal-polynomial parameters that closely approximate the absolute
+  temporal-spatial recruitments to be used as the initial values for the
+  minimisation. This is done in one simple and quick step that
+  precedes the minimisation. These can then be used as the starting point for
+  undertaking a new minimisation with the orthogonal-polynomial
+  parameterisation.
+
+
+Fixes
+------
+No corrections were required
+
+
+Versioning
+---------------
+This release represents a major revision to the version and therefore the
+version number has been changed to: 2.0.8.0
+
+--------------------------------------------------------------------------------
+
+Changes in Multifan-CL version 2.0.7.0:
+
+New features
+-----------------
+The following new features have been added:
+
+- Fitting tagging data to estimate movement only - an alternative approach for
+fitting tagging data that uses the SS3-like approach using the
+dirichlet-multinomial likelihood; applied for the grouped and ungrouped data
+scenarios, and also for pooled tags. Included the new likelihood in the
+test_plot_output report of the component objective function terms
+
+- Censored gamma likelihood for tagging data - an innovative likelihood for
+fitting tagging data using a Gamma distribution with a censor value outside of
+which data are accumulated. This offers a potential improvement for dealing
+with large over-dispersion due to zeroes
+
+
+Revisions
+---------
+The following revisions were made:
+
+- Self-scaling multinomial likelihood - the formulation of the self-scaling
+multinomial M-estimator for fitting composition data was improved to take the
+form of a likelihood function; and, this formulation was updated for both the
+options that include, or exclude, the estimation of random effects for the
+positive correlation in the residuals
+
+- Generating stochastic simulation inputs - optimised the inverse Hessian
+calculation using lapack_symmetric_eigen routines that greatly improves
+computation time
+
+- Negative-binomial tagging likelihood - enhancement to specify the upper
+bound on the overdispersion parameter
+
+- Simulation of tagging data - enhancement to input the iseed values via a
+command line argument
+
+
+Fixes
+------
+The following corrections were made:
+
+- Correction to test_plot_output report - added the component terms for the
+total catch likelihood, and both the grouped and ungrouped cases of the pooled
+tag likelihood
+
+- Correction to tail compression class - set to zero if unallocated; shifted
+constructors to optalloc.cpp routine and to exclude the zero-fishing case
+
+- Correction to tail compression execution - imposed this conditional upon the
+parest_flags(301, 311), and also for the related SSMULT reports in plot.rep
+
+- Corrections to parameter placement - routines set\_value() and
+  set\_value\_inv() for the cases of:
+
+  * grouping, grouping and mixed activation flags; for the sharing of
+    effort_dev_coffs for the multi-spp/stock/sex case
+
+  * incorrectly juxtaposed formal arguments
+
+- Corrections to intermediate fish_mort_calcs - calls to the correct
+sub-routine in the case of Cobb-Douglas catchability with zero-fishing
+mortality
+
+- Correction to robust-normal effective sample size calculation - performed
+over the correct size intervals
+
+- Debug tools - added new print routines: mpnz(), mpgt()
+
+
+Versioning
+---------------
+This release represents a major revision to the version and therefore the
+version number has been changed to: 2.0.7.0
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 2.0.6.0:
+
+New features
+-----------------
+The following new features have been added:
+
+- Allow fishing in non-movement time periods - relaxed the requirement for
+movement in each fishing time period. Includes backward compatibility with
+solution .par files of earlier versions
+
+- Parameterisation diagnostic - a heuristic of the runtime correlation structure
+among the estimated parameter values, wih the interval among evaluations
+being determined for storing the estimated parameter values
+
+- Movement parameterisation - an alternative orthogonal-polynomial
+parameterisation of movement diffusion coefficients may be employed that may
+reduce correlations among the coefficients
+
+
+Revisions
+---------
+The following revisions were made:
+
+- Maturity-at-length extended to multi-species -  where percent mature is input
+in respect of length rather than age, this was extended to the multi-species
+case.
+
+- Richards growth curve variance calculation - has been added to the calculation
+of stdev(mean length-at-age), and extended to the multi-species case
+
+- Multi-species maximum age - unique and different maximum age may be assigned
+for each species in a multi-species model
+
+- Optimised tagging calculations for multi-species case - such that they are
+only done specific to the regions occupied by each species
+
+- Revised report formatting of simulated pseudo-observations of size composition
+data
+
+- Added error check for missing stochastic simulation input files if nsim>0
+
+- Changes to scaling for some parameters (e.g. age_pars(4), mult_spp
+  age_pars(3))
+
+- New .par version number = 1059 - with format changes for movement diffusion
+coefficients
+
+
+Fixes
+------
+The following corrections were made relating to multi-sex and multi-species
+applications:
+
+- Multi-species growth curve variance calculation - correction was made to the
+calculation of stdev(mean length-at-age) in respect of each species
+
+- Correction for the recruitment option for deterministic projections where the
+BH-SRR predictions for the recruitments have the regional distributions
+specified in respect of an historical period
+
+- Corrections for the cases of no tagging data supplied, and single region model
+with no movement
+
+- Correction to allow very large fishery data input in .frq file
+
+- Correction to set_value routines to ensure correct routines are used relative
+to formal argument types
+
+
+Versioning
+---------------
+This release represents a major revision to the version and therefore the
+version number has been changed to: 2.0.6.0
+
+--------------------------------------------------------------------------------
+
+Changes in Multifan-CL version 2.0.5.1:
+
+New features
+-----------------
+The following new features have been added:
+- Self-scaling Multinomial M-estimator for composition data; the development of
+  an auto-regressive  auto-regressive method for estimating an autocorrelation
+  in the size composition residuals. This is still in development.
+- A diagnostic check of the input/output of the .par file
+- A model fit diagnostic of the Hessian using the singular value decomposition
+- Sharing effort_dev_coffs parameters for the multi-sex model
+- Implementation for a maturity-at-length feature
+
+Revisions
+---------
+The following revisions were made:
+- Extensions to the simulation mode; for generating pseudo-observations for the
+  estimation model time periods, and including tagging data having observation
+  error in the reporting rate probabilities
+- Optimising simulation and operating model calculations; with options to
+  exclude certain calculations and report generation to improve performance
+- Additional stochastic simulation reports for spawning biomass and Fmult
+
+
+Fixes
+------
+The following corrections were made relating to multi-sex and multi-species
+applications:
+- Correction to the xinit.rpt report file; reinstated the recr parameters
+- Correction for simulation recruitments where age_flags(182)=0
+
+Versioning
+---------------
+This release represents a major revision to the version and therefore the
+version number has been changed to: 2.0.5.1
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 2.0.4.0:
+
+New features
+-----------------
+The following new features have been added
+- specific options available for selection of function minimisers
+- generation of simulation Pseudo-observations for tagging data
+- estimating recruitments using an orthogonal-polynomial parameterisaton
+
+Revisions
+---------
+The following revisions were made:
+
+  Improvements were made to the self-scaling Multinomial method without random
+  effects estimation to extend this for weight frequency data. A revision was
+  made to the AR(1) penalty formulation, and the scalars for parameters were
+  revised.
+
+
+Fixes
+------
+The following corrections were made relating to multi-sex and multi-species
+applications:
+  - correction to exploitable biomass report to plot.rep
+  - correction to the calculation for the AR(1) process penalty term used for
+  estimating autocorrelated recruitments
+
+Versioning
+---------------
+This release represents a major revision to the version and therefore the
+version number has been changed to: 2.0.4.0
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 2.0.3.1:
+
+New features
+-----------------
+Likelihood profiling
+Enabled profiling in respect of the model derived quantity for average biomass
+over a defined period or a specified level of absolute biomass depletion, with
+each being specified either as total or adult biomass. A bash script file is
+appended to the User's Guide to assist with running the profile likelihood
+calculations.
+
+Revisions
+---------
+The following revisions were made:
+
+  An improvement was made to the method for fitting the BH-SRR with estimated
+  autocorrelation in the deviates, such that the relative weight of the AR(1)
+  penalty term is controlled using the standard age_flags(145) setting for
+  activating the BH-SRR fit. The autocorrelation moment estimate is calculated
+  by default (even if the feature is not activated), and is reported to the
+  plot.rep report file.
+
+  Visual Studio 2017 C++ compilation of a Windows executable. This is a change
+  from previous versions that used a MinGW compilation.
+
+  A number of improvements relating to multi-sex and multi-species applications:
+  - length-specific selectivity may be shared among sexes that may be
+    dimorphic (different growth rates)
+  - option for including sex ratio in the predicted size compositions that are
+    aggregated among sexes
+  - kludge for the fish_flags grouped_flag_sanity_check() routine to allow for
+    the special case of multi-sexes with shared length-specific selectivity
+  - including identifiers for sex in output reports
+
+  Improvements and refinements to the self-scaling Multinomial and Dirichlet-
+  Multinomial methods for fitting size-composition data.
+
+  Integrated the routines that apply tail compression to size composition data.
+
+Fixes
+------
+The following corrections were made relating to multi-sex and multi-species
+applications:
+  - correction to test_plot_output report components (bh_steep_contribution;
+    and tot_catch)
+  - correction to initial equilibrium numbers in the aggregate age class
+  - correction to the multi-sex calculation of equilibrium spawning biomass of
+
+Versioning
+---------------
+This release represents a major revision to the version and therefore the
+version number has been changed to: 2.0.3.1
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 2.0.2.2:
+
+New features
+-----------------
+No new features have been added.
+
+Revisions
+---------
+The following revision was made:
+  An improved formulation to the logistic selectivity at age calculation has
+  been made that is more robust to wide-ranging parameter estimates. This
+  results in more stable minimisation and reduces the need for the generic
+  selectivity penalty activated by parest_flags(74).
+
+Fixes
+------
+No fixes were required.
+
+Versioning
+---------------
+This release represents a very minor revision to the version and therefore the
+version number has been changed to: 2.0.2.2
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 2.0.2.1:
+
+New features
+-----------------
+New features have been added:
+- Predictions of the annualised BH-SRR are allocated by the average seasonal
+  recruitment in the projection periods
+- Tail compression was extended for weight composition data with a revised
+  penalty formulation
+- Dirichlet-Multinomial no random effects likelihood for size composition data
+- The self-scaling multinomial M-estimator (SSMULT) implementation has been
+  completed, and the phi function formulation was revised
+- Simulation mode for generating pseudo-observed data
+- Autocorrelation in recruitment estimates can be derived
+- Functional forms for natural mortality at age
+
+Revisions
+---------
+The revisions were made:
+- An improved algorithm for applying stochastic recruitment deviates to BH-SRR
+  predictions in simulation projections
+- Improved minimization stability
+- Improved the variance calculation to use the OpenBLAS library routine for the
+  singular value decomposition
+- st.dev report includes natural mortality age-specific deviates
+- Added a "catch" to detect when a vector of zeroes in size frequency data is
+  input in the .frq file. MULTIFAN-CL will stop with an error message.
+- New species parameters have been added to the .par file
+- MULTIFAN-CL version number has been added to the plot.rep file
+- Version of par file is 1052
+
+Fixes
+------
+- Fixed a bug in the st.dev report
+- Fixed a bug for fitting an estimation model that includes fisheries data for
+  a projection period
+- Fixed a bug in the input of size frequency that excluded the observation in
+  the first class interval
+
+Versioning
+---------------
+This release represents a revision to the version and therefore the version
+number has been changed to: 2.0.2.1
+
+--------------------------------------------------------------------------------
+
+Changes in Multifan-CL version 2.0.1.1:
+
+New features
+-----------------
+No new features have been added.
+
+Revisions
+---------
+The revisions were made:
+- The independent variable "recr" was restructured to be recr(2,nyears).
+  The feature implemented by parest_flags(400) was extended into the
+  multi-species dimension.
+- The functionality of age_flags(95) as supplying a multiplier to M or Z
+  for the initial equilibrium population conditions was transferred to
+  age_flags(128). The existing functionality of age_flags(95) to specify
+  the period over with the initial population is averaged is retained.
+
+Fixes
+------
+No bug fixes were required for this version.
+
+Versioning
+---------------
+This release represents a revision to the version and therefore the version
+number has been changed to: 2.0.1.1
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 2.0.0.3:
+
+New features
+-----------------
+No new features have been added.
+
+Revisions
+---------
+Minor revision (build) to report the variance of the fitted Beverton-Holt stock-
+recruitment relationship to the output file "plot-###.rep".
+
+Fixes
+------
+No bug fixes were required for this version.
+
+Versioning
+---------------
+This release represents a minor change to the version and therefore the version
+number has been changed to: 2.0.0.3
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 2.0.0.2:
+
+New features
+-----------------
+No new features have been added.
+
+Revisions
+---------
+Minor revision (build) to report initial tag release frequencies specific to age
+class to the output file "temporary_tag_report".
+
+
+Fixes
+------
+Minor fixes were made to the calculations for: pooled tag group negative
+binomial likelihood, and robust normal size composition likelihood.
+
+Versioning
+---------------
+This release represents a minor change to the version and therefore the version
+number has been changed to: 2.0.0.2
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 2.0.0.1:
+
+New features
+-----------------
+
+Substantial additional features have been made that include:
+-	Dimensions added for multi-species/sexes
+-	Multi-sex equilibrium yield calculations
+-	Time-variant selectivities
+-	Including age-length data in the model fit
+-	Tagging negative binomial likelihood - revised formulation and allow
+        relative weighting
+-	Likelihood components report
+-	Tagging diagnostics report
+-	Fitting the BH-SRR to calendar year (annual) recruitments
+-	Fixed terminal recruitment deviates
+-	Non-integer tag release frequencies allowed
+-	Size composition normal likelihood with a student-t probability density
+function
+-	Zero selectivity-at-age specified for particular young age classes
+-	Tail compression of size composition data
+-	Minimum sample size threshold applying to size composition data
+-	Fitting during the control phases with fixed growth
+
+Descriptions on how to apply these new and revised features are provided in the
+updated "MULTIFAN-CL User's Guide" dated February, 2016.
+
+Revisions
+---------
+The feature for a Cobb-Douglas biomass-related effect on catchability was
+substantially revised.
+
+Fixes
+------
+Various corrections were made to existing features, with only those relating to
+selectivity estimation and parameters scaling having an effect upon the
+converged solutions relative to those obtained using earlier versions of
+MULTIFAN-CL.
+
+Versioning
+---------------
+This release represents a major change to the version entailing numerous
+re-builds with substantial revisions and therefore the version number has been
+changed to: 2.0.0.1
+This represents the first stage of a major new version that has been developed.
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 1.1.5.9:
+
+New features
+-----------------
+
+There are no new features.
+
+Fixes
+------
+
+A small correction was made to the projection calculations relating to model
+runs undertaken with zero fishing mortality, that use the recruitments for the
+unfished population.
+
+Versioning
+---------------
+This release represents a minor re-build with a fix and therefore the version
+number has been changed to: 1.1.5.9
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 1.1.5.8:
+
+New features
+-----------------
+
+There are no new features.
+
+Fixes
+------
+
+A small correction was made to the fishing mortality calculations for a
+potential error which could occur in certain instances relating to the fishery
+subscript for a temporary storage variable.
+
+Versioning
+---------------
+This release represents a minor re-build with a fix and therefore the version
+number has been changed to: 1.1.5.8
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 1.1.5.7:
+
+New features
+-----------------
+
+Temporal recruitment deviates may be excluded from the parameters being
+estimated for the number of terminal time periods specified by the value
+assigned to parest_flags(400). This has required the parest_flags vector to be
+increased from 300 to 400 elements which has increased the .par file version
+number to 1046.
+
+The number of independent variables able to be estimated has been increased to
+10,000.
+
+Fixes
+------
+
+A fix was made the tag reporting rate used for calculating the predicted tags
+caught during the mixing period (fishery-specific or both fishery- and release
+group-specific), and these rates are subsequently reported with the predicted
+tags by period at liberty in the plot.rep output file. The redundant output
+files "fish-rep-rate.dat" and "fish-rep-rate2.dat" are now no longer generated.
+
+The interrupt facility using "ctrl-c" and "q" was adjusted to operate properly
+for the Windows executable.
+
+Versioning
+---------------
+This release represents a re-build with new features and fixes and therefore the
+version number has been changed to: 1.1.5.7
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 1.1.5.6:
+
+New features
+-----------------
+
+I minor modification was made to this re-build version that enables non-integer
+tag release length frequency data to be input in the .tag file.
+
+Versioning
+---------------
+This release represents a re-build with minor change to an existing feature and
+therefore the version number has been changed to: 1.1.5.6
+
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 1.1.5.5:
+
+New features
+-----------------
+
+No new features were added to this re-build version.
+
+Fixes
+------
+
+Fixes were made to the zero fishing mortality scenario (fish_flags 55 set to 1)
+for the calls to routines that generate recruitment predictions from the
+the Beverton-Holt stock recruitment relationship and for the calculation of
+average recruitment given the period defined.
+
+Versioning
+---------------
+This release represents a re-build with minor fixes and therefore the version
+number has been changed to: 1.1.5.5
+
+--------------------------------------------------------------------------------
+
+Changes in Multifan-CL version 1.1.5.4:
+
+New features
+-----------------
+1. Stochastic simulations
+
+Future stochastic recruitments may now be applied as deviates to the predictions
+of the Beverton-Holt stock-recruitment relationship (BH-SRR) in each projection
+run. This is activated by parest_flags(239) and enables future recruitments to
+be related to spawning stock biomass with the estimated variability in the
+relationship. If the BH-SRR has been estimated over a subset of the model time
+period using age_flags(199, 200), then these flag values must correspond to
+those of parest flags(232 and 233) used for generating the simulation set of
+stochastic recruitments.
+
+2. Yield analysis
+
+The estimation of the BH-SRR used for calculating equilibrium yields is
+penalised using a weight specified by the value of age_flags(145). The
+calculation of the weight has been revised such that negative values will enable
+low penalty weights.
+
+3. Recruitments
+
+A new age_flags[178] has been added for applying the constraint on the sum-
+product of regional recruitment proportions and the regional recruitment
+deviates to equal 1 in each model time period. Setting age_flags[178] = 1
+activates the constraint.
+
+Fixes
+------
+
+A small improvement was made to a routine that returns the BH-SRR parameters so
+that it uses the stable parameter phi. Improvements were made to several
+routines to maintain stability in the minisation during the control phases.
+
+Versioning
+---------------
+This release represents a revision of various features and a re-build with
+refinements and therefore the version number has been changed to: 1.1.5.4
+
+--------------------------------------------------------------------------------
+
+
+Changes in Multifan-CL version 1.1.4.3:
+
+New features
+-----------------
+1. Stochastic simulations
+
+
+Refinements have been made to the Hessian options 7 and 8, and improvements
+to the operations for stochastic simulation projections under zero fishing.
+These allow simulations under no fishing mortality to be run simultaneously
+with those under specified levels. Input and output filenames have been
+revised and these are detailed in the updated User's Guide. Should simulations
+need to be run incrementally, e.g. to undertake Harvest Control Rule
+evaluations, this is now possible.
+
+
+2. Reporting
+
+An additional output has been added to the report file "plot.rep" to include
+the tag_fish_group_flags so as to facilitate labeling the unique tagging
+reporting rates in the MULTIFAN-CL viewer.
+
+
+Fixes
+------
+
+A small fix has been made to the month doubling in respect of tagging data
+
+
+Versioning
+---------------
+This release represents a re-build with refinements and therefore
+the version number has been changed to: 1.1.4.3
+
+--------------------------------------------------------------------------------
+
+
+Changes in Multifan-CL version 1.1.4.2:
+
+New features
+-----------------
+1. Input ini file format
+
+Whereas formally the steepness value was modified directly in the .par file in
+between phases of the doitall fit. The format of the .ini file now includes the
+value of the steepness parameter for the Beverton-Holt stock recruitment
+relationship where it is initialised or fixed at the time of the makepar run.
+The location is within the Growth fragment of the .ini file, e.g.:
+
+# Weight-length parameters
+	2.784e-05	2.8992
+# Steepness - sv(29)
+	0.9
+# Variance parameters (avg SD, SD dependency on length)
+
+2. Maximum fishing mortality
+
+The default maximum fishing mortality in the Newton-Raphson catch equation has
+been raised to facilitate very high potential "observed" catches being achieved
+in model projections. User's are  cautioned that this maximum also applies in
+the model estimation period which may cause computational problems during model
+fitting. It is recommended to set age_flag(116)=70 or 110 (F = 0.7 or 1.1) for
+model estimation, but it can be set to 0 for deterministic projections (in which
+case the default maximum fishing mortality value of 5.0 will apply).
+
+3. Simulations
+
+A new output file containing fishing mortalities (f_by_age_by_year) is
+produced having the filename "projected_fmort_at_age_year".
+
+Simulations can now be operated for projections under zero fishing mortality.
+This is sometimes required for risk analysis in respect of biological limit
+reference points in respect of unfished biomass. A new output file containing
+unfished numbers at age is produced having the filename
+"projected_numbers_at_age_F0". The algorithm for running this type of simulation
+is not yet fully integrated into the executable and requires further development
+and users wanting this feature need contact the MULTIFAN-CL team.
+
+4. Correction for log-normal bias in SRR predicted recruitments
+A bias correction may be applied to the recruitment predictions from the BH-SRR
+so as to approximate the mean of the estimated recruitments. These corrected
+predictions may then be used for equilibrium yield calculations and
+deterministic projections. Activating this correction is dependent upon
+age_flag(161) = 1
+
+
+Fixes
+------
+The following problems have been rectified:
+A correction was made to the penalty calculation in respect of priors on
+fishery-specific tag reporting rates so that they be summated in respect of
+gflag(fish_flags(34)) instead of gflag(fish_flags(32)).
+
+Versioning
+---------------
+This release represents a revision version as well as a re-build and therefore
+the version number has been changed to: 1.1.4.2
+
+--------------------------------------------------------------------------------
+
+
+Changes in Multifan-CL version 1.1.3.1:
+
+New features
+-----------------
+1. Input ini file version numbering
+
+In version 1.1.2.0 a streamlined procedure was added for controlling the inputs
+of the parameters associated with estimating recapture rates of tagged fish
+relative to both release group and fishery group. This integrates the input into
+the -makepar run and the parameters are now input via the ini file. This
+necessitated added two new lines to the ini file defining the format version
+number. For this release version 1.1.3.1 backward compatibility was ensured with
+ini input files in the old format that lack the first two lines:
+# ini version number
+1000 or 1001
+If these lines are missing, the old file format is assumed that omits the
+input of tag reporting flags. If version number 1000 is supplied the old format
+is assumed, and if version number 1001 is supplied the new format is assumed
+with input of the tag reporting flags.
+Note that a version number < 1000 will cause the program to fail.
+
+2. Output file controls
+
+New parest_flags have been defined to control the output of particular report
+files. Under both normal fishing mortality calculations (fish_flags(55) = 0) and
+zero fishing mortality calculations (fish_flags(55) = 1) the following parest
+flag settings control file output:
+  parest_flag(189) = 0 : turns off output of *.fit files
+  parest_flag(190) = 0 : generates par file, but turns off output of plot.rep,
+                         plotq0.rep, ests.rep, temp_tag_report, fishmort files
+                         and most other report files
+  parest_flag(190) = 1 : turns on output of report files subject to options:
+	parest_flag(188) = 0 : turns off ests.rep, tag.rep
+	parest_flag(187) = 0 : turns off temporary_tag_rep
+	parest_flag(186) = 0 : turns off fishmort and plotq0.rep
+Note that the new flag settings are not backwardly compatible in that
+parest_flag(186, 187, and 188) must be set to 1 to output all files normally
+generated when parest_flag(190) was set to 1 for earlier versions.
+
+In summary three output options exist:
+- Full: 1 189 1 1 190 1 1 188 1 1 187 1 1 186 1
+- Streamlined: 1 189 0 1 190 1 1 188 0 1 187 0 1 186 0
+- Silent:  1 189 0 1 190 0 1 188 0 1 187 0 1 186 0
+Streamlined and silent options achieve faster performance for single model
+evaluations.
+
+
+Fixes
+------
+The following problems have been rectified:
+A correction was made to the calculation of equilibrium numbers in the aggregate
+age class which results in a very small (<1%) difference in population numbers,
+biomass, fishing mortality and equilibrium yield estimates.
+
+
+Versioning
+---------------
+This represents a build version and therefore the version number has been
+changed to: 1.1.3.1
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+Changes in Multifan-CL version 1.1.2.1:
+
+Fixes
+------
+The following problems have been rectified:
+- the model fit to tagging data has been modified to adjust the minimum age of
+the tagged population to be flexible rather than having a fixed value,
+- the Newton-Raphson calculation of catch and fishing mortality for tagged fish
+has been modified to improve the convergence for difficult tags.
+
+
+Versioning
+---------------
+This represents a build version and therefore the version number has been
+changed to: 1.1.2.1
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+Changes in Multifan-CL version 1.1.2.0:
+
+Integrated source code for Linux and Windows compilations
+--------------------------------------------------------------------------------
+Problems with achieving compilations under Linux (gcc) and Windows (cl - Visual
+Studio2010) using the same source code have been resolved. Now both compilations
+share the same source code once again.
+
+New features
+-----------------
+The facility to undertake model simulation runs that include projections into
+the future with stochastic recruitments. This will be extended to include
+stochasticity in the numbers-at-age in the first projection year and in
+fishery effort deviates in subsequent releases.
+
+Population deterministic projection scenarios that explore a range of
+assumptions regarding alternative recruitment regimes. Therefore, a flexible
+basis for generating future recruitments is now available in respect of the
+stock-recruitment relationship (either the entire modelling period or a part
+thereof), or an average of absolute recruitments over a user-specified period.
+
+A streamlined procedure for controlling the inputs of the parameters associated
+with estimating recapture rates of tagged fish relative to both release group
+and fishery group. This has been integrated into the -makepar run and the
+parameters are now input via the ini file.
+
+An additional output file (temporary_tag_report ) has been generated containing
+tag recaptures (observed and predicted) subscripted by: release group, recapture
+region, fishery, year, month, and age. This output permits detailed diagnosis of
+model fit in respect of the strata. For example, one may wish to consider the
+observed and expected rates of tag attrition.
+
+
+Fixes
+------
+The following problems have been rectified:
+- deterministic projections under zero fishing mortality.
+- projections with constant and extremely high catches
+- tag likelihood term has been made robust to projections and also robust to a
+minimum age class > 1
+- penalty calculation for tagging reporting rates by release group and fishery
+- Newton-Raphson calculation of catch and fishing mortality for tagged fish
+
+
+Versioning
+---------------
+This represents a revision version and therefore the version has been changed
+to: version 1.1.2.0
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Changes in Multifan-CL version 1.1.1.0:
+
+Integrated source code for Linux and Windows compilations
+--------------------------------------------------------------------------------
+Problems with achieving compilations under Linux (gcc) and Windows (cl - Visual
+Studio2010) using the same source code have been resolved. Now both compilations
+share the same source code once again.
+
+New features
+-----------------
+The number of estimable parameters has been increased from 7000 to 8000. This
+was found to be necessary since some complex models were exceeding the limit.
+
+The time period over which the Beverton-Holt stock-recruitment relationship
+(SRR) is calculated has been made flexible and user-defined. Earlier versions
+assume the entire model calculation period in deriving the SRR as used for
+equilibrium yield estimation. This is now the default option and flags may be
+set to define a part of the model period to be used for the SRR. This feature
+enables users to explore the effects of selecting a period considered to be more
+reliable or representative.
+
+Fixes
+------
+Projection catch equations were modified to cope with extra-ordinary
+circumstances of low population numbers and high fishing mortality. The fixes
+have made the equations more robust.
+
+The variance calculation of dependent variables has been fixed to deal with a
+problem for particular variables not being included.
+
+Versioning
+---------------
+Changed version to version 1.1.1.0
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+Changes in Multifan-CL version 1.1.0.0:
+
+New features
+-----------------
+Functionality was added for estimating tag reporting rates specific to
+individual tag release groups. This is to accommodate the likelihood of
+differences in voluntary reporting rates among release events due to levels of
+publicity, tagging technology, or motivation among the reporting sector. Priors
+on mean reporting rates are defined specific to each release group. New sections
+were added to the input data and par files, and the output files. See the
+updated User's Guide for details of these changes to what new inputs are
+required.
+
+Versioning
+---------------
+Changed version to version 1.1.0.0

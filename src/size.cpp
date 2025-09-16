@@ -1,0 +1,140 @@
+/*
+Copyright (C) Pacific Community (SPC)
+Refer to COPYRIGHT and LICENSE files in the root of the repository
+*/
+#define MY_REAL_DOUBLE double
+#include "extras.h"
+#define USE_NO_LAPACKE
+
+
+  
+#define HOME_VERSION
+#include "fvar.hpp"
+
+
+int size_count(_CONST dvar_vector& x)
+{
+  if (!(x))
+    return 0;
+  else  
+    return x.size();
+}
+
+int size_count_partial(_CONST dvar_vector& x,int n)
+{
+  if (!(x))
+    return 0;
+  else  
+  {
+    if (n<0)
+    {
+      cerr << "Illegal value for n in size_count_partial " << n << endl;
+      ad_exit(1);
+    }
+    return n;
+  }
+}
+
+int size_count(_CONST dvar_matrix& x)
+{
+  if (!(x))
+    return 0;
+  else
+  {  
+    int tmp=0;
+    int min=x.rowmin();
+    int max=x.rowmax();
+    for (int i=min;i<=max;i++)
+    {
+      tmp+=size_count(x(i));
+    }
+    return tmp;
+  }
+}
+
+int size_count_partial(_CONST dvar_matrix& x, int n)
+{
+  if (!(x))
+    return 0;
+  else
+  {
+    int tmp=0;
+    int min=x.rowmin();
+    int max=x.rowmax();
+    for (int i=min;i<=max;i++)
+    {
+      tmp+=size_count_partial(x(i),n);
+    }
+    return tmp;
+  }
+}
+
+int size_count(_CONST dvar3_array& x)
+{
+  if (!(x))
+    return 0;
+  else
+  {
+    int tmp=0;
+    int min=x.slicemin();
+    int max=x.slicemax();
+    for (int i=min;i<=max;i++)
+    {
+      tmp+=size_count(x(i));
+    }
+    return tmp;
+  }
+}
+
+int size_count(_CONST dvar4_array& x)
+{
+  if (!(x))
+    return 0;
+  else
+  {
+    int tmp=0;
+    int min=x.indexmin();
+    int max=x.indexmax();
+    for (int i=min;i<=max;i++)
+    {
+      tmp+=size_count(x(i));
+    }
+    return tmp;
+  }
+}
+
+int size_count(_CONST d4_array& x)
+{
+  if (!(x))
+    return 0;
+  else
+  {
+    int tmp=0;
+    int min=x.indexmin();
+    int max=x.indexmax();
+    for (int i=min;i<=max;i++)
+    {
+      tmp+=size_count(x(i));
+    }
+    return tmp;
+  }
+}
+
+int size_count_partial(_CONST dvar3_array& x, int n)
+{
+  if (!(x))
+    return 0;
+  else
+  {
+    int tmp=0;
+    int min=x.slicemin();
+    int max=x.slicemax();
+    for (int i=min;i<=max;i++)
+    {
+      tmp+=size_count_partial(x(i),n);
+    }
+    return tmp;
+  }
+}
+
+#undef HOME_VERSION

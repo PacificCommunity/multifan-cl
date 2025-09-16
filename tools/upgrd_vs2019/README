@@ -1,0 +1,11 @@
+=======================
+MULTIFAN-CL README FILE
+=======================
+July 31st 2025
+
+                    MULTIFAN-CL Readme
+                    © SPC-CPS 2025
+                    JULY 31 2025
+              ---------------------------
+
+This folder contains files needed to build and test MFCL with long-double (128 bit)precision.

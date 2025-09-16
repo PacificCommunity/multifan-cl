@@ -1,0 +1,312 @@
+#  don't use this here use real_ddnrc3.cpp to get QD library ./mysed-option ddnrc3.cpp
+PARENT_DIR=/shared-files/mfcl-jan11-19-dave/testdir-boost-gcc 
+./mysed-option biodynam.cpp
+./mysed-option convert_matlen_to_matage.cpp
+./mysed-option ddnrc3_save.cpp
+./mysed-option dfBetai.cpp
+./mysed-option dirmulft.cpp
+./mysed-option do_all_for_empirical_autocorrelated_bh.cpp
+./mysed-option multspp_tagfit.cpp
+./mysed-option gs2.cpp
+./mysed-option kludged_equil_surv.cpp
+./mysed-option lbselclc.cpp
+./mysed-option len_dm_nore.cpp
+./mysed-option lmult.cpp
+./mysed-option mfclimplicit.cpp
+./mysed-option mspcode.cpp
+./mysed-option mwcode.cpp
+./mysed-option mygram_schmidt.cpp
+./mysed-option myorth.cpp
+./mysed-option mysort.cpp
+./mysed-option natural_mortality_spline.cpp
+./mysed-option new_cross_derivs.cpp
+./mysed-option newfmin.cpp
+./mysed-option newl9.cpp
+./mysed-option new-len-self-scaling-multiomial.cpp
+./mysed-option new_lognormal_multinomial5.cpp
+./mysed-option newmaturity.cpp
+./mysed-option newmau5a.cpp
+./mysed-option newmaux5.cpp
+./mysed-option newmult.cpp
+./mysed-option newmult_save.cpp
+./mysed-option neworth.cpp
+./mysed-option newpredcatch.cpp
+./mysed-option new-wght-self-scaling-multiomial.cpp
+./mysed-option nnewlan.cpp
+./mysed-option nrcatch3_experiment.cpp
+./mysed-option old_new_cross_derivs.cpp
+./mysed-option phi_newer.cpp
+./mysed-option oldversion2len.cpp
+./mysed-option plot.cpp
+./mysed-option plotN0.cpp
+./mysed-option ptagfit.cpp
+./mysed-option ptagfit_ss3.cpp
+./mysed-option recrpen.cpp
+./mysed-option rshort1.cpp
+./mysed-option self_scaling_mult_re.cpp
+./mysed-option sim_realtag_pd.cpp
+./mysed-option spline.cpp
+./mysed-option tag4.cpp
+./mysed-option tagfit.cpp
+./mysed-option tagfit_ss3.cpp
+./mysed-option test.cpp
+./mysed-option tester.cpp
+./mysed-option threaded_tag3.cpp
+./mysed-option version2_wght_self_scaling_multinomial_re_multi_rho_multi_var.cpp
+./mysed-option version3_len_self_scaling_multinomial_re_multi_rho_multi_var.cpp
+./mysed-option version3_wght_self_scaling_multinomial_re_multi_rho_multi_var.cpp
+./mysed-option vrbioclc.cpp
+./mysed-option xequilib.cpp
+./mysed-option xml.cpp
+./mysed-option xrshort3.cpp
+./mysed-option yield_bh.cpp
+./mysed-option incident_calc.cpp
+./mysed-option no_spline.cpp
+./mysed-option rsh3imp.cpp
+./mysed-option dmat34.cpp
+./mysed-option alldevpn.cpp
+./mysed-option extras.cpp
+./mysed-option gradcforproj.cpp
+./mysed-option testsvdinv_noeff.cpp
+
+
+cp ${PARENT_DIR}/newmult.hpp . 
+cp ${PARENT_DIR}/variable.hpp . 
+cp ${PARENT_DIR}/nrcatch3.cpp . 
+cp ${PARENT_DIR}/nrcatch4.cpp . 
+
+cp ${PARENT_DIR}/admsthread.cpp .
+cp ${PARENT_DIR}/agelength.cpp .
+cp ${PARENT_DIR}/alb_ctl.cpp .
+cp ${PARENT_DIR}/alldpen2.cpp .
+cp ${PARENT_DIR}/alllengthsel.cpp .
+cp ${PARENT_DIR}/avcafit-ms.cpp .
+cp ${PARENT_DIR}/avcatfit.cpp .
+cp ${PARENT_DIR}/bandedsymlu.cpp .
+cp ${PARENT_DIR}/bandedsymstuff.cpp .
+cp ${PARENT_DIR}/callpen.cpp .
+cp ${PARENT_DIR}/catagfit.cpp .
+cp ${PARENT_DIR}/catbyyr.cpp .
+cp ${PARENT_DIR}/catimp.cpp .
+cp ${PARENT_DIR}/catlefit.cpp .
+cp ${PARENT_DIR}/catwt_fit.cpp .
+cp ${PARENT_DIR}/choleski_check.cpp .
+cp ${PARENT_DIR}/cnfastyr.cpp .
+cp ${PARENT_DIR}/cobbdoug.cpp .
+cp ${PARENT_DIR}/crbioclc.cpp .
+cp ${PARENT_DIR}/ddbanded_symstuff.cpp .
+cp ${PARENT_DIR}/dep_grad.cpp .
+cp ${PARENT_DIR}/derch.cpp .
+cp ${PARENT_DIR}/df22fun.cpp .
+cp ${PARENT_DIR}/df32fun.cpp .
+cp ${PARENT_DIR}/diffrout.cpp .
+cp ${PARENT_DIR}/dmat15.cpp .
+cp ${PARENT_DIR}/envio.cpp .
+cp ${PARENT_DIR}/eq2.cpp .
+cp ${PARENT_DIR}/equilib.cpp .
+cp ${PARENT_DIR}/ests.cpp .
+cp ${PARENT_DIR}/exploit.cpp .
+cp ${PARENT_DIR}/extra.cpp .
+cp ${PARENT_DIR}/fishseli.cpp .
+cp ${PARENT_DIR}/fitcat.cpp .
+cp ${PARENT_DIR}/fitqimp.cpp .
+cp ${PARENT_DIR}/flagset.cpp .
+cp ${PARENT_DIR}/fmeanpen.cpp .
+cp ${PARENT_DIR}/fnorm.cpp .
+cp ${PARENT_DIR}/fp_rep.cpp .
+cp ${PARENT_DIR}/fvar_a29.cpp .
+cp ${PARENT_DIR}/fvar_m24.cpp .
+cp ${PARENT_DIR}/fvar_m58.cpp .
+cp ${PARENT_DIR}/getcorr1.cpp .
+cp ${PARENT_DIR}/getinp2.cpp .
+cp ${PARENT_DIR}/get_orth_poly_info.cpp .
+cp ${PARENT_DIR}/get_orth_weights.cpp .
+cp ${PARENT_DIR}/getpath.cpp .
+cp ${PARENT_DIR}/get_tag_year.cpp .
+cp ${PARENT_DIR}/goodpen.cpp .
+cp ${PARENT_DIR}/gradrout.cpp .
+cp ${PARENT_DIR}/grpcatch.cpp .
+cp ${PARENT_DIR}/grptag.cpp .
+cp ${PARENT_DIR}/hessrout.cpp .
+cp ${PARENT_DIR}/htotcafi.cpp .
+cp ${PARENT_DIR}/interface.cpp .
+cp ${PARENT_DIR}/ivec8.cpp .
+cp ${PARENT_DIR}/kalcat.cpp .
+cp ${PARENT_DIR}/kludge.cpp .
+cp ${PARENT_DIR}/lapack_real_double_interface.cpp .
+cp ${PARENT_DIR}/lbcutoff.cpp .
+cp ${PARENT_DIR}/learner_code.cpp .
+cp ${PARENT_DIR}/length_logistic.cpp .
+cp ${PARENT_DIR}/len_tail_compress.cpp .
+cp ${PARENT_DIR}/lesmatrix.cpp .
+cp ${PARENT_DIR}/lmul_io2.cpp .
+cp ${PARENT_DIR}/lmul_io4.cpp .
+cp ${PARENT_DIR}/lmult_io.cpp .
+cp ${PARENT_DIR}/lognormal_multinomial4.cpp .
+cp ${PARENT_DIR}/lognormal_mult_ll_cs.cpp .
+cp ${PARENT_DIR}/long_double_disp.cpp .
+cp ${PARENT_DIR}/lowtridmatrix.cpp .
+cp ${PARENT_DIR}/lwsim.cpp .
+cp ${PARENT_DIR}/makebig2.cpp .
+cp ${PARENT_DIR}/makedep.cpp .
+cp ${PARENT_DIR}/mfclthread.cpp .
+cp ${PARENT_DIR}/mfexp.cpp .
+cp ${PARENT_DIR}/minimizer.cpp .
+cp ${PARENT_DIR}/minvmult.cpp .
+cp ${PARENT_DIR}/mlcalc.cpp .
+cp ${PARENT_DIR}/moveconvert.cpp .
+cp ${PARENT_DIR}/multcoff.cpp .
+cp ${PARENT_DIR}/mytest1.cpp .
+cp ${PARENT_DIR}/newcatcheq.cpp .
+cp ${PARENT_DIR}/newcod.cpp .
+cp ${PARENT_DIR}/newfishsel.cpp .
+cp ${PARENT_DIR}/newgradc.cpp .
+cp ${PARENT_DIR}/newgradc_noeff.cpp .
+cp ${PARENT_DIR}/newgradc_split.cpp .
+cp ${PARENT_DIR}/new_incident_calc.cpp .
+cp ${PARENT_DIR}/newl2a.cpp .
+cp ${PARENT_DIR}/newl2.cpp .
+cp ${PARENT_DIR}/newl4.cpp .
+cp ${PARENT_DIR}/newl4_sav.cpp .
+cp ${PARENT_DIR}/newl5.cpp .
+cp ${PARENT_DIR}/newl6.cpp .
+cp ${PARENT_DIR}/newl8.cpp .
+cp ${PARENT_DIR}/newl9_sav.cpp .
+cp ${PARENT_DIR}/newlbsel.cpp .
+cp ${PARENT_DIR}/newmaux1.cpp .
+cp ${PARENT_DIR}/newmaux4.cpp .
+cp ${PARENT_DIR}/newm_io3.cpp .
+cp ${PARENT_DIR}/newmovement2.cpp .
+cp ${PARENT_DIR}/newmovement.cpp .
+cp ${PARENT_DIR}/new_orthogonal_recr.cpp .
+cp ${PARENT_DIR}/newrshimp.cpp .
+cp ${PARENT_DIR}/newrshimp_experiment.cpp .
+cp ${PARENT_DIR}/newrshimp_experiment_save.cpp .
+cp ${PARENT_DIR}/newway.cpp .
+cp ${PARENT_DIR}/new_weight_logistic.cpp .
+cp ${PARENT_DIR}/nfast96a.cpp .
+cp ${PARENT_DIR}/nfast96.cpp .
+cp ${PARENT_DIR}/nmsort.cpp .
+cp ${PARENT_DIR}/nopenalties.cpp .
+cp ${PARENT_DIR}/normaliz2.cpp .
+cp ${PARENT_DIR}/normaliz.cpp .
+cp ${PARENT_DIR}/nrcatch3.cpp .
+cp ${PARENT_DIR}/nrcatch3_mc.cpp .
+cp ${PARENT_DIR}/nrcatch3x.cpp .
+cp ${PARENT_DIR}/nrcatch4.cpp .
+cp ${PARENT_DIR}/nrmissing_effort.cpp .
+cp ${PARENT_DIR}/old_scbound.cpp .
+cp ${PARENT_DIR}/old_scset1.cpp .
+cp ${PARENT_DIR}/old_scsetin1.cpp .
+cp ${PARENT_DIR}/old_scsetin.cpp .
+cp ${PARENT_DIR}/old_scsetinp.cpp .
+cp ${PARENT_DIR}/old_scsetp.cpp .
+cp ${PARENT_DIR}/old_setcomm2.cpp .
+cp ${PARENT_DIR}/old_setcomm3.cpp .
+cp ${PARENT_DIR}/old_setcomm4.cpp .
+cp ${PARENT_DIR}/old_setcomm5.cpp .
+cp ${PARENT_DIR}/old_setcomm6.cpp .
+cp ${PARENT_DIR}/old_setcomm7.cpp .
+cp ${PARENT_DIR}/old_setcomm8.cpp .
+cp ${PARENT_DIR}/old_setcomm.cpp .
+cp ${PARENT_DIR}/old_set.cpp .
+cp ${PARENT_DIR}/old_setin.cpp .
+cp ${PARENT_DIR}/onevar.cpp .
+cp ${PARENT_DIR}/optalloc.cpp .
+cp ${PARENT_DIR}/optfile.cpp .
+cp ${PARENT_DIR}/optmatch.cpp .
+cp ${PARENT_DIR}/par_ofio.cpp .
+cp ${PARENT_DIR}/plotstuff.cpp .
+cp ${PARENT_DIR}/pooltag1.cpp .
+cp ${PARENT_DIR}/popes_approx.cpp .
+cp ${PARENT_DIR}/printfrq.cpp .
+cp ${PARENT_DIR}/rationalize_movement.cpp .
+cp ${PARENT_DIR}/readnew.cpp .
+cp ${PARENT_DIR}/readtag.cpp .
+cp ${PARENT_DIR}/readtag_nick.cpp .
+cp ${PARENT_DIR}/recinpop_orth.cpp .
+cp ${PARENT_DIR}/rnaux2.cpp .
+cp ${PARENT_DIR}/rob2_fit.cpp .
+cp ${PARENT_DIR}/robf_fit.cpp .
+cp ${PARENT_DIR}/rshort3.cpp .
+cp ${PARENT_DIR}/scbound.cpp .
+cp ${PARENT_DIR}/scset1.cpp .
+cp ${PARENT_DIR}/scsetin1.cpp .
+cp ${PARENT_DIR}/scsetin.cpp .
+cp ${PARENT_DIR}/scsetinp.cpp .
+cp ${PARENT_DIR}/scsetp.cpp .
+cp ${PARENT_DIR}/selbreaks.cpp .
+cp ${PARENT_DIR}/set2.cpp .
+cp ${PARENT_DIR}/setcomm1.cpp .
+cp ${PARENT_DIR}/setcomm2.cpp .
+cp ${PARENT_DIR}/setcomm3.cpp .
+cp ${PARENT_DIR}/setcomm4.cpp .
+cp ${PARENT_DIR}/setcomm5.cpp .
+cp ${PARENT_DIR}/setcomm6.cpp .
+cp ${PARENT_DIR}/setcomm7.cpp .
+cp ${PARENT_DIR}/setcomm8.cpp .
+cp ${PARENT_DIR}/setcomm.cpp .
+cp ${PARENT_DIR}/set_ctrl.cpp .
+cp ${PARENT_DIR}/setgroup_1.cpp .
+cp ${PARENT_DIR}/setin.cpp .
+cp ${PARENT_DIR}/setuppvm.cpp .
+cp ${PARENT_DIR}/short2.cpp .
+cp ${PARENT_DIR}/simrep.cpp .
+cp ${PARENT_DIR}/sim_tag_pd.cpp .
+cp ${PARENT_DIR}/simulation_mode.cpp .
+cp ${PARENT_DIR}/sim_xpooltag.cpp .
+cp ${PARENT_DIR}/size.cpp .
+cp ${PARENT_DIR}/sqrwght.cpp .
+cp ${PARENT_DIR}/squareft.cpp .
+cp ${PARENT_DIR}/squareft_t.cpp .
+cp ${PARENT_DIR}/ssmulttridag.cpp .
+cp ${PARENT_DIR}/ssonly.cpp .
+cp ${PARENT_DIR}/tag3.cpp .
+cp ${PARENT_DIR}/tag5.cpp .
+cp ${PARENT_DIR}/tag7.cpp .
+cp ${PARENT_DIR}/tag8.cpp .
+cp ${PARENT_DIR}/tagfitsu.cpp .
+cp ${PARENT_DIR}/tagtmp.cpp .
+cp ${PARENT_DIR}/tc_length_logistic.cpp .
+cp ${PARENT_DIR}/tc_weight_logistic.cpp .
+cp ${PARENT_DIR}/temppred.cpp .
+cp ${PARENT_DIR}/test2.cpp .
+cp ${PARENT_DIR}/testeq1.cpp .
+cp ${PARENT_DIR}/testeq2.cpp .
+cp ${PARENT_DIR}/test_kludge_pen.cpp .
+cp ${PARENT_DIR}/test_lapack.cpp .
+cp ${PARENT_DIR}/testmsy2.cpp .
+cp ${PARENT_DIR}/test_msy.cpp .
+cp ${PARENT_DIR}/testnewl3.cpp .
+cp ${PARENT_DIR}/test_squareft.cpp .
+cp ${PARENT_DIR}/test_tag_report.cpp .
+cp ${PARENT_DIR}/thread_stuff2.cpp .
+cp ${PARENT_DIR}/thread_stuff3.cpp .
+cp ${PARENT_DIR}/thread_stuff4.cpp .
+cp ${PARENT_DIR}/thread_stuff5.cpp .
+cp ${PARENT_DIR}/thread_stuff6.cpp .
+cp ${PARENT_DIR}/thread_stuff7.cpp .
+cp ${PARENT_DIR}/thread_stuff8.cpp .
+cp ${PARENT_DIR}/thread_stuff.cpp .
+cp ${PARENT_DIR}/threadtot.cpp .
+cp ${PARENT_DIR}/totalfrq.cpp .
+cp ${PARENT_DIR}/totwtfit.cpp .
+cp ${PARENT_DIR}/tridiagonal_dmatrix.cpp .
+cp ${PARENT_DIR}/tt.cpp .
+cp ${PARENT_DIR}/ttest.cpp .
+cp ${PARENT_DIR}/tx.cpp .
+cp ${PARENT_DIR}/varcatch.cpp .
+cp ${PARENT_DIR}/veff_dev.cpp .
+cp ${PARENT_DIR}/version2_len_self_scaling_multinomial_nore.cpp .
+cp ${PARENT_DIR}/version2_wght_self_scaling_multinomial_re_multi_rho_multi_var.cpp .
+cp ${PARENT_DIR}/vsm.cpp .
+cp ${PARENT_DIR}/wfast96.cpp .
+cp ${PARENT_DIR}/wght_dm_nore.cpp .
+cp ${PARENT_DIR}/wght_tail_compress.cpp .
+cp ${PARENT_DIR}/www.cpp .
+cp ${PARENT_DIR}/xpooltag.cpp .
+cp ${PARENT_DIR}/xthread_stuff.cpp .
+cp ${PARENT_DIR}/xwww2.cpp .
+cp ${PARENT_DIR}/yieldbhp.cpp .
+cp ${PARENT_DIR}/ythread_stuff.cpp .
+cp ${PARENT_DIR}/yukio.cpp .

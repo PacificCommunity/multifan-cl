@@ -1,0 +1,2681 @@
+void set_value(const dvar_vector& _x,const dvector& y,const dvar_vector& v, const int& _ii, 
+  double fmin, double fmax, const dvariable& fpen,double s);
+
+void set_value(const dvar_vector& _x,const dvar_vector& v,int flag,
+  const int& _ii,double fmin, double fmax, const dvariable& fpen,double s);
+
+//void set_value(const dvar_vector& _x,const dvar_vector& v,
+  //const int& _ii,double fmin, double fmax, const dvariable& fpen,double s);
+
+void set_value_inv(const dvar_vector& _x,const dvar_vector& v,int flag,
+  const int& _ii,double fmin,double fmax,double s);
+
+void set_value_inv(const dvar_vector& _x,const dvar_vector& v,
+  const int& _ii,double fmin,double fmax,double s);
+
+
+void set_value_inv(const dvar_vector& _x,const dvector& y, const dvector& _v, const int& _ii,
+  double fmin, double fmax,double s);
+
+void set_value_inv(const prevariable& _x,const dvector& _v, const int& _ii,
+  double fmin, double fmax,int iflag,double s);
+
+void set_value_inv_partial(const dvar_vector& x,const dvector& _v, const int& _ii, int n,
+  double fmin, double fmax, double s);
+
+void set_value_inv_partial(const dvector& x,const dvector& _v, const int& _ii, int n,
+  double fmin, double fmax, double s);
+
+void set_value_inv_partial(const dvar_matrix& x,const dvector& _v, const int& _ii, int n,
+  double fmin, double fmax, double s);
+
+
+void set_value_inv_partial(const dvar_vector& x,const dvector& _v, const int& _ii, int n,
+  double s);
+
+void set_value_partial(const dvar_vector& _x,const dvar_vector& v, const int& _ii, int n,
+  double fmin, double fmax, const dvariable& fpen, double s);
+
+void set_value_partial(const dvar_matrix _x,const dvar_vector& v,
+  const int& _ii, int n,double fmin, double fmax, const dvariable& fpen,
+  double s);
+
+void set_value_partial(const dvar_vector& _x,const dvar_vector& v, const int& _ii, int n,
+  double s);
+
+void set_value_inv_partial(const dmatrix& w,const dvector& x,const int& ii,
+  const ivector& range,double fmin,double fmax,const ivector& flags,
+  const ivector& group,double scale);
+
+void set_value_inv_partial(const dmatrix& w,const dvector& x,const int& ii,
+  int range,double fmin,double fmax,double scale);
+
+void set_value_inv_partial(const d3_array& w,const dvector& x,const int& ii,
+  const ivector& range,double fmin,double fmax,const ivector& flags,
+  const ivector& group,double scale);
+
+void set_value_inv_partial(const d3_array& w,const dvector& x,const int& ii,
+  const int range,double fmin,double fmax,int flags, double scale);
+
+void set_value_inv_partial(const dvar_matrix& w,const dvector& x,
+  const int& ii,int range,double fmin,double fmax,double scale);
+
+void set_value_inv_partial(const dvar3_array& w,const dvector& x,const int& ii,
+  const int range,double fmin,double fmax,double scale);
+
+void set_value_inv_partial(const dvar4_array& w,const dvector& x,const int& ii,
+  const int range,double fmin,double fmax,int flags,double scale);
+
+void set_value_inv_partial(const dvar4_array& w,const dvector& x,const int& ii,
+  const int range,double fmin,double fmax,double scale);
+
+
+void set_value_partial(const dvar_matrix& _w,const dvar_vector& x,
+  const int& ii,const ivector& range,double fmin,double fmax,
+  const dvariable& pen,const ivector& group,double scale);
+
+void set_value_inv_partial(const dvar_matrix& _w,const dvector& x,
+  const int& ii,const ivector& range,double fmin,double fmax,
+  const ivector& group,double scale);
+  
+
+void set_value_partial(const dvar_matrix& _w,const dvar_vector& x,
+  const int& ii,const ivector& range,double fmin,double fmax,
+  const dvariable& pen,const ivector& flags,const ivector& group,double scale);
+void set_value_partial(const dvar3_array& _w,const dvar_vector& x,
+  const int& ii,const ivector& range,double fmin,double fmax,
+  const dvariable& pen,const ivector& flags,const ivector& group,double scale);
+
+void set_value_partial(const dvar_matrix& _w,const dvar_vector& x,
+  const int& ii,int range,double fmin,double fmax,
+  const dvariable& pen,const ivector& flags,const ivector& group,double scale);
+
+void set_value_partial(const dvar3_array& _w,const dvar_vector& x,
+  const int& ii,int range,double fmin,double fmax,
+  const dvariable& pen,const ivector& flags,const ivector& group,double scale);
+
+
+void set_value_partial(const dvar3_array& _w,const dvar_vector& x,
+  const int& ii,const ivector& range,double fmin,double fmax,
+  const dvariable& pen,const ivector& flags,double scale);
+
+void set_value_partial(const dvar3_array& _w,const dvar_vector& x,
+  const int& ii,const ivector& range,double fmin,double fmax,
+  const dvariable& pen,double scale);
+
+void set_value_partial(const dvar3_array& _w,const dvar_vector& x,
+  const int& ii,const int range,double fmin,double fmax,
+  const dvariable& pen,double scale);
+
+void set_value_partial(const dvar4_array& _w,const dvar_vector& x,
+  const int& ii,const int range,double fmin,double fmax,
+  const dvariable& pen,double scale);
+
+void set_value_partial(const dvar4_array& _w,const dvar_vector& x,
+  const int& ii,const int range,double fmin,double fmax,
+  const dvariable& pen,int flags,double scale);
+
+    
+dvar_matrix colsub(const dvar_matrix& _M,int lb,int ub);
+int getdim(int ff57,int ff61,int nage);
+int logic_equal(int flag,int flag1);
+
+void set_value_partial(const dvar3_array& _w,const dvar_vector& x,
+  const int& ii,double fmin,double fmax,
+  const dvariable& pen,const ivector& flags,const ivector& group,
+  double scale,ivector& block_ptr,ivector& ff57,int nage,ivector& ff61,
+  ivector& sel_block_index);
+
+void set_value_inv_partial(const dvar3_array& _w,const dvector& x,
+  const int& ii,double fmin,double fmax,
+  const ivector& flags,const ivector& group,
+  double scale,ivector& block_ptr,ivector& ff57,int nage,ivector& ff61,
+  ivector& sel_block_index);
+
+  void set_value_inv(const dmatrix& w,const dvector& x,const int& ii,double fmin,double fmax,
+    int flags,const ivector& group);
+
+  void set_value_inv(const dmatrix& w,const dvector& x,const int& ii,double fmin,double fmax,double s,
+    int flags,const ivector& group);
+
+
+  void set_value_inv(const dvar_matrix& w,const dvector& x,const int& ii,
+    double fmin,double fmax,double s,int flags,const ivector& group);
+
+  void set_value(const dvar_matrix& _w,const dvar_vector& x,
+    const int& ii,double fmin,double fmax,
+    const dvariable& pen,int flags,const ivector& group);
+
+dvariable boundp(const prevariable& x, double fmin, double fmax);
+dvariable boundp(const prevariable& x, double fmin, double fmax,double s);
+
+void set_value(const dvar_vector& x,_CONST dvar_vector& v, const int& _ii,
+  double fmin,double fmax,const double s);
+
+ // xxx   void set_value(const dvar_matrix& _w,const dvar_vector& x,
+ // xxx     const int& ii,double fmin,double fmax,
+ // xxx     const double s,int flags,const ivector& group)
+ // xxx   {
+ // xxx     dvar_matrix& w=(dvar_matrix&) _w;
+ // xxx     int mmin=w.rowmin();
+ // xxx     int mmax=w.rowmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags) set_value(w(kin),x,ii,fmin,fmax,s);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           w(key(i))=w(key(i-1));
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags) set_value(w(kin),x,ii,fmin,fmax,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags) set_value(w(i),x,ii,fmin,fmax,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx 
+ // xxx   void set_value(const dvar_matrix& _w,const dvar_vector& x,const int& ii,double fmin,double fmax,
+ // xxx     const dvariable& pen,double s,int flags,const ivector& group)
+ // xxx   {
+ // xxx     dvar_matrix& w=(dvar_matrix&) _w;
+ // xxx     int mmin=w.rowmin();
+ // xxx     int mmax=w.rowmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags) set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           w(key(i))=w(key(i-1));
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags) set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags) set_value(w(i),x,ii,fmin,fmax,pen,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx #include <fvar.hpp>
+ // xxx #include <newmult.hpp>
+ // xxx #include "scbd.hpp"
+ // xxx 
+ // xxx   void check_group_for_holes(const ivector& v);
+ // xxx   void check_group_flag_sanity(const ivector& flag,const ivector& group);
+ // xxx 
+ // xxx 
+ // xxx void set_value_exp(const prevariable& _x,const dvar_vector& v,const int& _ii, 
+ // xxx   double fmin, double fmax,const dvariable& _fpen)
+ // xxx {
+ // xxx   int& ii=(int&)_ii; 
+ // xxx   prevariable& x=(prevariable&) _x;
+ // xxx   dvariable& fpen=(dvariable&) _fpen;
+ // xxx   x=exp(boundp(v(ii++),log(fmin),log(fmax),fpen));
+ // xxx }
+ // xxx 
+ // xxx 
+ // xxx   void set_value_inv(const dvar_vector& w,const dvector& x,const int& ii,
+ // xxx     double fmin,double fmax,const ivector& flags,const ivector& group)
+ // xxx   {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(flags))
+ // xxx     {
+ // xxx       if (sum(group))
+ // xxx       {
+ // xxx         check_group_for_holes(group);
+ // xxx         check_group_flag_sanity(flags,group);
+ // xxx         ivector key(mmin,mmax);
+ // xxx         sort(group,key);
+ // xxx         int kin=key(mmin);
+ // xxx         int flag_value=flags(kin);
+ // xxx         if (flags(kin)) set_value_inv(w(kin),x,ii,fmin,fmax);
+ // xxx         for (int i=mmin+1;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (group(key(i))==group(key(i-1)))
+ // xxx           {
+ // xxx             if (flags(key(i))!=flag_value)
+ // xxx             {
+ // xxx               cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx                    << endl;
+ // xxx               exit(1);
+ // xxx             }
+ // xxx           }
+ // xxx           else
+ // xxx           {
+ // xxx             kin=key(i);
+ // xxx             flag_value=flags(kin);
+ // xxx             if (flags(kin)) set_value_inv(w(kin),x,ii,fmin,fmax);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx       else
+ // xxx       {
+ // xxx         for (int i=mmin;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (flags(i)) set_value_inv(w(i),x,ii,fmin,fmax);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx   
+ // xxx   void set_value_inv(const dvar_matrix& _mw,const dvector& x,const int& ii,
+ // xxx     double fmin,double fmax,const imatrix& mflags,const imatrix& mgroup)
+ // xxx   {
+ // xxx     dvar_vector w=rowstack(_mw);
+ // xxx     ivector flags=rowstack(mflags);
+ // xxx     ivector group=rowstack(mgroup);
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(flags))
+ // xxx     {
+ // xxx       if (sum(group))
+ // xxx       {
+ // xxx         check_group_for_holes(group);
+ // xxx         check_group_flag_sanity(flags,group);
+ // xxx         ivector key(mmin,mmax);
+ // xxx         sort(group,key);
+ // xxx         int kin=key(mmin);
+ // xxx         int flag_value=flags(kin);
+ // xxx         if (flags(kin)) set_value_inv(w(kin),x,ii,fmin,fmax);
+ // xxx         for (int i=mmin+1;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (group(key(i))==group(key(i-1)))
+ // xxx           {
+ // xxx             if (flags(key(i))!=flag_value)
+ // xxx             {
+ // xxx               cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx                    << endl;
+ // xxx               exit(1);
+ // xxx             }
+ // xxx           }
+ // xxx           else
+ // xxx           {
+ // xxx             kin=key(i);
+ // xxx             flag_value=flags(kin);
+ // xxx             if (flags(kin)) set_value_inv(w(kin),x,ii,fmin,fmax);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx       else
+ // xxx       {
+ // xxx         for (int i=mmin;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (flags(i)) set_value_inv(w(i),x,ii,fmin,fmax);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     rowunstack(w,_mw);
+ // xxx   }
+ // xxx   
+ // xxx     void set_value(const dvar_vector& _w,const dvar_vector& x,const int& _ii,
+ // xxx       double fmin,double fmax,const dvariable& pen,const ivector& flags,
+ // xxx       const ivector& group)
+ // xxx     {
+ // xxx       int i;
+ // xxx       dvar_vector& w=(dvar_vector&) _w;
+ // xxx       int& ii= (int&) _ii;
+ // xxx       int mmin=w.indexmin();
+ // xxx       int mmax=w.indexmax();
+ // xxx       if (sum(flags))
+ // xxx       {
+ // xxx         if (sum(group))
+ // xxx         {
+ // xxx           ivector key(mmin,mmax);
+ // xxx           sort(group,key);
+ // xxx           /*
+ // xxx           for (i=mmin+1;i<=mmax;i++)
+ // xxx           {
+ // xxx             cout << group(key(i)) << " ";
+ // xxx           }
+ // xxx           */
+ // xxx           int kin=key(mmin);
+ // xxx           int flag_value=flags(kin);
+ // xxx           if (flags(kin)) set_value(w(kin),x,ii,fmin,fmax,pen);
+ // xxx           for (i=mmin+1;i<=mmax;i++)
+ // xxx           {
+ // xxx             if (group(key(i))==group(key(i-1)))
+ // xxx             {
+ // xxx               //if (flags(i)) w(key(i))=w(kin);
+ // xxx               //  DF  1Mar19
+ // xxx               if (flags(key(i))) w(key(i))=w(kin);
+ // xxx               if (flags(key(i))!=flag_value)
+ // xxx               {
+ // xxx                 cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx                      << endl;
+ // xxx                 exit(1);
+ // xxx               }
+ // xxx             }
+ // xxx             else
+ // xxx             {
+ // xxx               kin=key(i);
+ // xxx               flag_value=flags(kin);
+ // xxx               if (flags(kin)) set_value(w(kin),x,ii,fmin,fmax,pen);
+ // xxx             }
+ // xxx           }
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           for (int i=mmin;i<=mmax;i++)
+ // xxx           {
+ // xxx             if (flags(i)) set_value(w(i),x,ii,fmin,fmax,pen);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx 
+ // xxx     void set_value(const dvar_matrix& _mw,const dvar_vector& x,const int& _ii,
+ // xxx       double fmin,double fmax,const dvariable& pen,const imatrix& mflags,
+ // xxx       const imatrix& mgroup)
+ // xxx     {
+ // xxx       int i;
+ // xxx       //dvar_matrix& mw=(dvar_matrix&) _mw;
+ // xxx       dvar_vector w=rowstack(_mw);
+ // xxx       ivector flags=rowstack(mflags);
+ // xxx       ivector group=rowstack(mgroup);
+ // xxx       int& ii= (int&) _ii;
+ // xxx       int mmin=w.indexmin();
+ // xxx       int mmax=w.indexmax();
+ // xxx       if (sum(flags))
+ // xxx       {
+ // xxx         if (sum(group))
+ // xxx         {
+ // xxx           ivector key(mmin,mmax);
+ // xxx           sort(group,key);
+ // xxx           int kin=key(mmin);
+ // xxx           int flag_value=flags(kin);
+ // xxx           if (flags(kin)) set_value(w(kin),x,ii,fmin,fmax,pen);
+ // xxx           for (i=mmin+1;i<=mmax;i++)
+ // xxx           {
+ // xxx             if (group(key(i))==group(key(i-1)))
+ // xxx             {
+ // xxx               //if (flags(i)) w(key(i))=w(kin);
+ // xxx               //  DF  1Mar19
+ // xxx               if (flags(key(i))) w(key(i))=w(kin);
+ // xxx               if (flags(key(i))!=flag_value)
+ // xxx               {
+ // xxx                 cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx                      << endl;
+ // xxx                 exit(1);
+ // xxx               }
+ // xxx             }
+ // xxx             else
+ // xxx             {
+ // xxx               kin=key(i);
+ // xxx               flag_value=flags(kin);
+ // xxx               if (flags(kin)) set_value(w(kin),x,ii,fmin,fmax,pen);
+ // xxx             }
+ // xxx           }
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           for (int i=mmin;i<=mmax;i++)
+ // xxx           {
+ // xxx             if (flags(i)) set_value(w(i),x,ii,fmin,fmax,pen);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx       rowunstack(w,_mw);
+ // xxx     }
+ // xxx 
+ // xxx     void set_value_exp(const dvar_matrix& _mw,const dvar_vector& x,
+ // xxx       const int& _ii,double fmin,double fmax,const dvariable& pen,
+ // xxx       const imatrix& mflags,const imatrix& mgroup)
+ // xxx     {
+ // xxx       int i;
+ // xxx       //dvar_matrix& mw=(dvar_matrix&) _mw;
+ // xxx       dvar_vector w=rowstack(_mw);
+ // xxx       ivector flags=rowstack(mflags);
+ // xxx       ivector group=rowstack(mgroup);
+ // xxx       int& ii= (int&) _ii;
+ // xxx       int mmin=w.indexmin();
+ // xxx       int mmax=w.indexmax();
+ // xxx       if (sum(flags))
+ // xxx       {
+ // xxx         if (sum(group))
+ // xxx         {
+ // xxx           ivector key(mmin,mmax);
+ // xxx           sort(group,key);
+ // xxx           int kin=key(mmin);
+ // xxx           int flag_value=flags(kin);
+ // xxx           if (flags(kin)) set_value_exp(w(kin),x,ii,fmin,fmax,pen);
+ // xxx           for (i=mmin+1;i<=mmax;i++)
+ // xxx           {
+ // xxx             if (group(key(i))==group(key(i-1)))
+ // xxx             {
+ // xxx               //if (flags(i)) w(key(i))=w(kin);
+ // xxx               //  DF  1Mar19
+ // xxx               if (flags(key(i))) w(key(i))=w(kin);
+ // xxx               if (flags(key(i))!=flag_value)
+ // xxx               {
+ // xxx                 cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx                      << endl;
+ // xxx                 exit(1);
+ // xxx               }
+ // xxx             }
+ // xxx             else
+ // xxx             {
+ // xxx               kin=key(i);
+ // xxx               flag_value=flags(kin);
+ // xxx               if (flags(kin)) set_value_exp(w(kin),x,ii,fmin,fmax,pen);
+ // xxx             }
+ // xxx           }
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           for (int i=mmin;i<=mmax;i++)
+ // xxx           {
+ // xxx             if (flags(i)) set_value_exp(w(i),x,ii,fmin,fmax,pen);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx       rowunstack(w,_mw);
+ // xxx     }
+ // xxx 
+ // xxx     void set_value_exp(const dvar_matrix& _mw,const dvar_vector& x,
+ // xxx       const int& _ii,double fmin,double fmax,const dvariable& pen,
+ // xxx       const imatrix& mflags,const imatrix& mgroup,double s)
+ // xxx     {
+ // xxx       int i;
+ // xxx       //dvar_matrix& mw=(dvar_matrix&) _mw;
+ // xxx       dvar_vector w=rowstack(_mw);
+ // xxx       ivector flags=rowstack(mflags);
+ // xxx       ivector group=rowstack(mgroup);
+ // xxx       int& ii= (int&) _ii;
+ // xxx       int mmin=w.indexmin();
+ // xxx       int mmax=w.indexmax();
+ // xxx       if (sum(flags))
+ // xxx       {
+ // xxx         if (sum(group))
+ // xxx         {
+ // xxx           ivector key(mmin,mmax);
+ // xxx           sort(group,key);
+ // xxx           int kin=key(mmin);
+ // xxx           int flag_value=flags(kin);
+ // xxx           if (flags(kin)) set_value_exp(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx           for (i=mmin+1;i<=mmax;i++)
+ // xxx           {
+ // xxx             if (group(key(i))==group(key(i-1)))
+ // xxx             {
+ // xxx               //if (flags(i)) w(key(i))=w(kin);
+ // xxx               //  DF  1Mar19
+ // xxx               if (flags(key(i))) w(key(i))=w(kin);
+ // xxx               if (flags(key(i))!=flag_value)
+ // xxx               {
+ // xxx                 cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx                      << endl;
+ // xxx                 exit(1);
+ // xxx               }
+ // xxx             }
+ // xxx             else
+ // xxx             {
+ // xxx               kin=key(i);
+ // xxx               flag_value=flags(kin);
+ // xxx               if (flags(kin)) set_value_exp(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx             }
+ // xxx           }
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           for (int i=mmin;i<=mmax;i++)
+ // xxx           {
+ // xxx             if (flags(i)) set_value_exp(w(i),x,ii,fmin,fmax,pen,s);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx       rowunstack(w,_mw);
+ // xxx     }
+ // xxx 
+ // xxx  //   void set_value(const dvar_vector& _w,const dvar_vector& x,const int& _ii,
+ // xxx  //     double fmin,double fmax,const dvariable& pen,const ivector& flags,
+ // xxx  //     const ivector& group)
+ // xxx  //   {
+ // xxx  //     dvar_vector& w=(dvar_vector&) _w;
+ // xxx  //     int& ii= (int&) _ii;
+ // xxx  //     int mmin=w.indexmin();
+ // xxx  //     int mmax=w.indexmax();
+ // xxx  //     int maxg=max(group);
+ // xxx  //     if (sum(flags))
+ // xxx  //     {
+ // xxx  //       cout << "flags = " << flags << endl;
+ // xxx  //       if (maxg)
+ // xxx  //       {
+ // xxx  //         int icount=0;
+ // xxx  //         ivector group_flag(1,maxg);
+ // xxx  //         group_flag.initialize();
+ // xxx  //         ii--;
+ // xxx  //         for (int i=mmin;i<=mmax;i++)
+ // xxx  //         {
+ // xxx  //           if (flags(i)) 
+ // xxx  //           {
+ // xxx  //             w(i)=boundp(x(ii+group(i)),fmin,fmax,pen);
+ // xxx  //             if (!group_flag(group(i)))
+ // xxx  //             {
+ // xxx  //               icount++;
+ // xxx  //               group_flag(group(i))=1;
+ // xxx  //             }
+ // xxx  //           }
+ // xxx  //         }
+ // xxx  //         ii+=icount+1;
+ // xxx  //         //ii+=max(group)+1;
+ // xxx  //       }
+ // xxx  //       else
+ // xxx  //       {
+ // xxx  //         for (int i=mmin;i<=mmax;i++)
+ // xxx  //         {
+ // xxx  //           if (flags(i)) w(i)=boundp(x(ii++),fmin,fmax,pen);
+ // xxx  //         }
+ // xxx  //       }
+ // xxx  //     }
+ // xxx  //   }
+ // xxx  //   
+ // xxx 
+ // xxx #include <fvar.hpp>
+ // xxx 
+ // xxx   int size(const dmatrix& M);
+ // xxx   int size(const dvar_matrix& M);
+ // xxx   int size_count(const dvar3_array& w,int flags,const ivector& group);
+ // xxx   int size_count(const dvar4_array& w,ivector&  flags,const ivector& group);
+ // xxx 
+ // xxx   int num_active(const d3_array& w,int flags,const ivector& group);
+ // xxx   int num_active(const dvar3_array& w,int flags,const ivector& group);
+ // xxx   int num_active(const dvar3_array& w,ivector& flags,const ivector& group);
+ // xxx 
+ // xxx 
+ // xxx   void set_value(const dvar3_array& _w,const dvar_vector& x,const int& ii,
+ // xxx     double fmin,double fmax,const dvariable& pen,double s,ivector&  flags,
+ // xxx     const ivector& group)
+ // xxx   {
+ // xxx     dvar3_array& w=(dvar3_array&) _w;
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags(kin)) 
+ // xxx       {
+ // xxx         set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx       }
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           w(key(i))=w(key(i-1));
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags(i)) 
+ // xxx           {
+ // xxx             set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags(i)) set_value(w(i),x,ii,fmin,fmax,pen,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx   void set_value_inv(const d3_array& w,const dvector& x,const int& ii,double fmin,double fmax,
+ // xxx     int flags,const ivector& group)
+ // xxx   {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags) set_value_inv(w(kin),x,ii,fmin,fmax);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))!=group(key(i-1)))
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags) set_value_inv(w(kin),x,ii,fmin,fmax);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags) set_value_inv(w(i),x,ii,fmin,fmax);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx 
+ // xxx   void set_value_inv(const d3_array& w,const dvector& x,const int& ii,double fmin,double fmax,double s,
+ // xxx     int flags,const ivector& group)
+ // xxx   {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags) set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))!=group(key(i-1)))
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags) set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags) set_value_inv(w(i),x,ii,fmin,fmax,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx 
+ // xxx   void set_value_inv(const dvar3_array& w,const dvector& x,const int& ii,
+ // xxx     double fmin,double fmax,double s,int flags,const ivector& group)
+ // xxx   {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags) set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))!=group(key(i-1)))
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags) set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags) set_value_inv(w(i),x,ii,fmin,fmax,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx   void set_value(const dvar3_array& _w,const dvar_vector& x,
+ // xxx     const int& ii,double fmin,double fmax,
+ // xxx     const dvariable& pen,int flags,const ivector& group)
+ // xxx   {
+ // xxx     dvar3_array& w=(dvar3_array&) _w;
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags) set_value(w(kin),x,ii,fmin,fmax,pen);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           w(key(i))=w(key(i-1));
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags) set_value(w(kin),x,ii,fmin,fmax,pen);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags) set_value(w(i),x,ii,fmin,fmax,pen);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx   void set_value(const dvar4_array& _w,const dvar_vector& x,
+ // xxx     const int& ii,double fmin,double fmax,
+ // xxx     const dvariable& pen,int flags,const ivector& group)
+ // xxx   {
+ // xxx     dvar4_array& w=(dvar4_array&) _w;
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags) set_value(w(kin),x,ii,fmin,fmax,pen);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           w(key(i))=w(key(i-1));
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags) set_value(w(kin),x,ii,fmin,fmax,pen);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags) set_value(w(i),x,ii,fmin,fmax,pen);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx 
+ // xxx   void set_value(const dvar3_array& _w,const dvar_vector& x,
+ // xxx     const int& ii,double fmin,double fmax,
+ // xxx     const double s,int flags,const ivector& group)
+ // xxx   {
+ // xxx     dvar3_array& w=(dvar3_array&) _w;
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags) set_value(w(kin),x,ii,fmin,fmax,s);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           w(key(i))=w(key(i-1));
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags) set_value(w(kin),x,ii,fmin,fmax,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags) set_value(w(i),x,ii,fmin,fmax,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx 
+ // xxx 
+ // xxx   void set_value(const dvar3_array& _w,const dvar_vector& x,const int& ii,double fmin,double fmax,
+ // xxx     const dvariable& pen,double s,int flags,const ivector& group)
+ // xxx   {
+ // xxx     dvar3_array& w=(dvar3_array&) _w;
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags) set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           w(key(i))=w(key(i-1));
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags) set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags) set_value(w(i),x,ii,fmin,fmax,pen,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx   void set_value(const dvar3_array& _w,const dvar_vector& x,const int& ii,double fmin,double fmax,
+ // xxx     const dvariable& pen,double s,ivector&  flags,const ivector& group)
+ // xxx   {
+ // xxx     dvar3_array& w=(dvar3_array&) _w;
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags(kin)) 
+ // xxx       {
+ // xxx         set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx       }
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           w(key(i))=w(key(i-1));
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags(i)) 
+ // xxx           {
+ // xxx             set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags(i)) set_value(w(i),x,ii,fmin,fmax,pen,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx   void set_value(const dvar4_array& _w,const dvar_vector& x,const int& ii,double fmin,double fmax,
+ // xxx     const dvariable& pen,double s,ivector&  flags,const ivector& group)
+ // xxx   {
+ // xxx     dvar4_array& w=(dvar4_array&) _w;
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags(kin)) 
+ // xxx          set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           w(key(i))=w(key(i-1));
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags(kin)) 
+ // xxx             set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags(i)) 
+ // xxx           set_value(w(i),x,ii,fmin,fmax,pen,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx 
+ // xxx 
+ // xxx   void set_value_inv(const dvar3_array& w,const dvector& x,const int& ii,
+ // xxx     double fmin,double fmax,double s,ivector&  flags,const ivector& group)
+ // xxx   {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags(kin)) set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))!=group(key(i-1)))
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags(kin)) set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags(i)) set_value_inv(w(i),x,ii,fmin,fmax,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx   void set_value_inv(const dvar4_array& w,const dvector& x,const int& ii,
+ // xxx     double fmin,double fmax,double s,ivector&  flags,const ivector& group)
+ // xxx   {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags(kin)) 
+ // xxx           set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))!=group(key(i-1)))
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           if (flags(kin)) 
+ // xxx             set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags(i)) 
+ // xxx           set_value_inv(w(i),x,ii,fmin,fmax,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx 
+ // xxx 
+ // xxx #include <fvar.hpp>
+ // xxx 
+ // xxx void set_value_inv(const dvar_vector& x,const dvector& _v,const int& _ii,
+ // xxx   ivector mflags,double fmin,double fmax,double s)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   int min=x.indexmin();
+ // xxx   int max=x.indexmax();
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     if (mflags(i))
+ // xxx     {
+ // xxx       v(ii++)=boundpin(x(i),fmin,fmax)*s;
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx  
+ // xxx   void set_value_inv(const dvar_matrix & _w,const dvector& x,const int& ii,
+ // xxx     double fmin,double fmax,double s,ivector&  flags,imatrix& mflags,
+ // xxx     const ivector& group)
+ // xxx   {
+ // xxx     ADUNCONST(dvar_matrix,w)  //NMD_27apr2018
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags(kin)) 
+ // xxx           set_value_inv(w(kin),x,ii,mflags(kin),fmin,fmax,s);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           w(key(i))=w(key(i-1));
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx //          if (flags(i))
+ // xxx           if (flags(kin))    //DF_9jan2019
+ // xxx           {
+ // xxx             set_value_inv(w(kin),x,ii,mflags(kin),fmin,fmax,s);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags(i)) 
+ // xxx           set_value_inv(w(i),x,ii,mflags(i),fmin,fmax,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx void set_value(const dvar_vector& _v,const dvar_vector& x,const int& _ii,
+ // xxx   ivector& mflags,double fmin,double fmax,const prevariable& pen,double s)
+ // xxx {
+ // xxx   RETURN_ARRAYS_INCREMENT();
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvar_vector& v=(dvar_vector&) _v;
+ // xxx   int min=v.indexmin();
+ // xxx   int max=v.indexmax();
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     if (mflags(i))
+ // xxx     {
+ // xxx       v(i)=boundp(x(ii++),fmin,fmax,pen,s);
+ // xxx     }
+ // xxx   }
+ // xxx   RETURN_ARRAYS_DECREMENT();
+ // xxx }
+ // xxx 
+ // xxx 
+ // xxx   void set_value(const dvar_matrix & _w,const dvar_vector& x,const int& ii,
+ // xxx     double fmin,double fmax,const prevariable& pen,
+ // xxx     double s,ivector&  flags,imatrix& mflags,
+ // xxx     const ivector& group)
+ // xxx   {
+ // xxx     ADUNCONST(dvar_matrix,w)  //NMD_27apr2018
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags(kin)) 
+ // xxx           set_value(w(kin),x,ii,mflags(kin),fmin,fmax,pen,s);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           w(key(i))=w(key(i-1));
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx //          if (flags(i))
+ // xxx           if (flags(kin))    //DF_9jan2019
+ // xxx           {
+ // xxx             set_value(w(kin),x,ii,mflags(kin),fmin,fmax,pen,s);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags(i)) 
+ // xxx           set_value(w(i),x,ii,mflags(i),fmin,fmax,pen,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx   
+ // xxx   void set_value_inv(const dvar_matrix & _w,const dvector& x,const int& ii,
+ // xxx     double fmin,double fmax,double s,ivector&  flags,
+ // xxx     const ivector& group)
+ // xxx   {
+ // xxx     ADUNCONST(dvar_matrix,w)  //NMD_27apr2018
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       if (flags(kin)) 
+ // xxx           set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           w(key(i))=w(key(i-1));
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx //          if (flags(i))
+ // xxx           if (flags(kin))    //DF_9jan2019
+ // xxx           {
+ // xxx             set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags(i)) 
+ // xxx           set_value_inv(w(i),x,ii,fmin,fmax,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx #define HOME_VERSION //COPYRIGHT (c) 1991 OTTER RESEARCH LTD
+ // xxx #include "fvar.hpp"
+ // xxx #include "scbd.hpp"
+ // xxx 
+ // xxx 
+ // xxx void set_value_inv_partial(const dvar_vector& x,const dvector& _v, 
+ // xxx   const int& _ii, int nl, int nu,double fmin, double fmax, double s)
+ // xxx {
+ // xxx   dvector& v=(dvector&)_v;
+ // xxx   int& ii=(int&)_ii;
+ // xxx   int min=nl;
+ // xxx   int max=nu;
+ // xxx   #ifdef SAFE_ARRAYS
+ // xxx     if (nu >x.indexmax())
+ // xxx     {
+ // xxx       cerr << "index out of range in set_value_patial(const dvar_vector&, ... "
+ // xxx 	   << endl;
+ // xxx     }
+ // xxx     if (nl <x.indexmin())
+ // xxx     {
+ // xxx       cerr << "index out of range in set_value_patial(const dvar_vector&, ... "
+ // xxx 	   << endl;
+ // xxx     }
+ // xxx   #endif
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     v(ii++)=s*boundpin(x(i),fmin,fmax);
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value_inv_partial(const dvar_matrix& x,const dvector& _v,
+ // xxx   const int& _ii, int nl,int nu,double fmin, double fmax, double s)
+ // xxx {
+ // xxx   dvector& v=(dvector&)_v;
+ // xxx   int& ii=(int&)_ii;
+ // xxx   int min=x.indexmin();
+ // xxx   int max=x.indexmax();
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     set_value_inv_partial(x(i),v,ii,nl,nu,fmin,fmax,s);
+ // xxx     //set_value_inverse_partial(x(i),v,ii,n,fmin,fmax,s);
+ // xxx   }
+ // xxx }
+ // xxx void set_value_partial(const dvar_vector& _x,const dvar_vector& v,
+ // xxx   const int& _ii, int nl,int nu,double fmin, double fmax, const dvariable& fpen, double s)
+ // xxx {
+ // xxx   dvar_vector& x=(dvar_vector&) _x;
+ // xxx   int& ii=(int&) _ii;
+ // xxx   int min=nl;
+ // xxx   int max=nu;
+ // xxx   #ifdef SAFE_ARRAYS
+ // xxx     if (nu >x.indexmax())
+ // xxx     {
+ // xxx       cerr << "index out of range in set_value_patial(const dvar_vector&, ... "
+ // xxx            << endl;
+ // xxx     }
+ // xxx     if (nl <x.indexmin())
+ // xxx     {
+ // xxx       cerr << "index out of range in set_value_patial(const dvar_vector&, ... "
+ // xxx            << endl;
+ // xxx     }
+ // xxx   #endif
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     x(i)=boundp(v(ii++)/s,fmin,fmax,fpen);
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value_partial(const dvar_matrix _x,const dvar_vector& v,
+ // xxx   const int& _ii,int nl,int nu,double fmin, double fmax,
+ // xxx   const dvariable& fpen,double s)
+ // xxx {
+ // xxx   ADUNCONST(dvar_matrix,x)
+ // xxx   ADUNCONST(int,ii)
+ // xxx   int mmin=x.indexmin();
+ // xxx   int mmax=x.indexmax();
+ // xxx   for (int i=mmin;i<=mmax;i++)
+ // xxx   {
+ // xxx     set_value_partial(x(i),v,ii,nl,nu,fmin,fmax,fpen,s);
+ // xxx   }
+ // xxx }
+ // xxx int size_count_partial(_CONST dvar_vector& x,int nl,int nu)
+ // xxx {
+ // xxx   if (!(x))
+ // xxx     return 0;
+ // xxx   else  
+ // xxx   {
+ // xxx     if (nu-nl+1<0)
+ // xxx     {
+ // xxx       cerr << "Illegal value for n in size_count_partial " << nl << "  "
+ // xxx            << nu  << endl;
+ // xxx       ad_exit(1);
+ // xxx     }
+ // xxx     return nu-nl+1;
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx int size_count_partial(_CONST dvar_matrix& x, int nl,int nu)
+ // xxx {
+ // xxx   if (!(x))
+ // xxx     return 0;
+ // xxx   else
+ // xxx   {
+ // xxx     int tmp=0;
+ // xxx     int min=x.rowmin();
+ // xxx     int max=x.rowmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       tmp+=size_count_partial(x(i),nl,nu);
+ // xxx     }
+ // xxx     return tmp;
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx int size_count_partial(_CONST dvar3_array& x, int nl,int nu)
+ // xxx {
+ // xxx   if (!(x))
+ // xxx     return 0;
+ // xxx   else
+ // xxx   {
+ // xxx     int tmp=0;
+ // xxx     int min=x.slicemin();
+ // xxx     int max=x.slicemax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       tmp+=size_count_partial(x(i),nl,nu);
+ // xxx     }
+ // xxx     return tmp;
+ // xxx   }
+ // xxx }
+ // xxx int num_active_partial(const dvar4_array& w,int nl,int nu)
+ // xxx {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     int nv=0;
+ // xxx     for (int i=mmin;i<=mmax;i++)
+ // xxx     {
+ // xxx       nv+=size_count_partial(w(i),nl,nu);
+ // xxx     }
+ // xxx     return nv;
+ // xxx }
+ // xxx void set_value_inv_partial(const dvar3_array& w,const dvector& x,const int& ii,
+ // xxx   const int nl,const int nu,double fmin,double fmax,double scale)
+ // xxx {
+ // xxx   int mmin=w.indexmin();
+ // xxx   int mmax=w.indexmax();
+ // xxx   for (int i=mmin;i<=mmax;i++)
+ // xxx   {
+ // xxx     set_value_inv_partial(w(i),x,ii,nl,nu,fmin,fmax,scale);
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value_inv_partial(const dvar4_array& w,const dvector& x,const int& ii,
+ // xxx   const int nl,int nu,double fmin,double fmax,double scale)
+ // xxx {
+ // xxx   int mmin=w.indexmin();
+ // xxx   int mmax=w.indexmax();
+ // xxx   for (int i=mmin;i<=mmax;i++)
+ // xxx   {
+ // xxx     set_value_inv_partial(w(i),x,ii,nl,nu,fmin,fmax,scale);
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value_partial(const dvar3_array& _w,const dvar_vector& x,
+ // xxx   const int& ii,const int nl,int nu,double fmin,double fmax,
+ // xxx   const dvariable& pen,double scale)
+ // xxx {
+ // xxx   ADUNCONST(dvar3_array,w)
+ // xxx   int mmin=w.indexmin();
+ // xxx   int mmax=w.indexmax();
+ // xxx   cout << mmin << " " << mmax << endl;
+ // xxx   for (int i=mmin;i<=mmax;i++)
+ // xxx   {
+ // xxx     set_value_partial(w(i),x,ii,nl,nu,fmin,fmax,pen,scale);
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value_partial(const dvar4_array& _w,const dvar_vector& x,
+ // xxx   const int& ii,const int nl,int nu,double fmin,double fmax,
+ // xxx   const dvariable& pen,double scale)
+ // xxx {
+ // xxx   ADUNCONST(dvar4_array,w)
+ // xxx   int mmin=w.indexmin();
+ // xxx   int mmax=w.indexmax();
+ // xxx   cout << mmin << " " << mmax << endl;
+ // xxx   for (int i=mmin;i<=mmax;i++)
+ // xxx   {
+ // xxx     set_value_partial(w(i),x,ii,nl,nu,fmin,fmax,pen,scale);
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx #include <fvar.hpp>
+ // xxx #include <newmult.hpp>
+ // xxx #include "scbd.hpp"
+ // xxx 
+ // xxx 
+ // xxx void set_value_exp(const prevariable& _x,const dvar_vector& v,const int& _ii, 
+ // xxx   double fmin, double fmax,const dvariable& _fpen,double s)
+ // xxx {
+ // xxx   int& ii=(int&)_ii; 
+ // xxx   prevariable& x=(prevariable&) _x;
+ // xxx   dvariable& fpen=(dvariable&) _fpen;
+ // xxx   x=exp(boundp(v(ii++),log(fmin),log(fmax),fpen,s));
+ // xxx }
+ // xxx 
+ // xxx 
+ // xxx 
+ // xxx   void set_value_inv(const dvar_vector& _w,const dvector& x,const int& ii,
+ // xxx     double fmin,double fmax,int flags,double& scale)
+ // xxx   {
+ // xxx     dvar_vector& w=(dvar_vector&) _w;
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags) set_value_inv(w(i),x,ii,fmin,fmax,scale);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx   void set_value_inv(const dvar_vector& w,const dvector& x,const int& ii,double fmin,double fmax,
+ // xxx     const ivector& flags,double s)
+ // xxx   {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags(i)) set_value_inv(w(i),x,ii,fmin,fmax,s);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx void set_value(const dvar_vector& _w,const dvar_vector& x,const int& _ii,double fmin,
+ // xxx   double fmax,const dvariable& pen,const ivector& flags)
+ // xxx {
+ // xxx   dvar_vector& w=(dvar_vector&) _w;
+ // xxx   int& ii= (int&) _ii;
+ // xxx   int mmin=w.indexmin();
+ // xxx   int mmax=w.indexmax();
+ // xxx   {
+ // xxx     for (int i=mmin;i<=mmax;i++)
+ // xxx     {
+ // xxx       if (flags(i)) w(i)=boundp(x(ii++),fmin,fmax,pen);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value(const dvar_vector& _w,const dvar_vector& x,const int& _ii,double fmin,
+ // xxx   double fmax,const dvariable& pen,const ivector& flags,double s)
+ // xxx {
+ // xxx   dvar_vector& w=(dvar_vector&) _w;
+ // xxx   int& ii= (int&) _ii;
+ // xxx   int mmin=w.indexmin();
+ // xxx   int mmax=w.indexmax();
+ // xxx   {
+ // xxx     for (int i=mmin;i<=mmax;i++)
+ // xxx     {
+ // xxx       if (flags(i)) w(i)=boundp(x(ii++),fmin,fmax,pen,s);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx //void set_value_inv(const prevariable& ,const dvector& x,const int& ii,double fmin,
+ // xxx //  double fmax,double scale);
+ // xxx 
+ // xxx   void set_value_inv(const dvector& w,const dvector& x,const int& ii,double fmin,double fmax,
+ // xxx     const ivector& flags,const ivector& group,double scale)
+ // xxx   {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(group))
+ // xxx     {
+ // xxx       ivector key(mmin,mmax);
+ // xxx       sort(group,key);
+ // xxx       int kin=key(mmin);
+ // xxx       double w_value=value(w(kin));
+ // xxx       int flag_value=flags(kin);
+ // xxx       if (flags(kin)) set_value_inv(w(kin),x,ii,fmin,fmax,scale);
+ // xxx       for (int i=mmin+1;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (group(key(i))==group(key(i-1)))
+ // xxx         {
+ // xxx           if (value(w(key(i)))!=w_value)
+ // xxx           {
+ // xxx             cerr << "Error -- grouped initial parameters have unequal values"
+ // xxx                  << endl;
+ // xxx             ad_exit(1);
+ // xxx           }
+ // xxx           if (flags(key(i))!=flag_value)
+ // xxx           {
+ // xxx             cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx                  << endl;
+ // xxx             ad_exit(1);
+ // xxx           }
+ // xxx         }
+ // xxx         else
+ // xxx         {
+ // xxx           kin=key(i);
+ // xxx           flag_value=flags(kin);
+ // xxx           w_value=value(w(kin));
+ // xxx           if (flags(kin)) set_value_inv(w(kin),x,ii,fmin,fmax);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags(i)) set_value_inv(w(i),x,ii,fmin,fmax);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx void set_value(const dvar_vector& w,const dvar_vector& x,const int& ii,double fmin,
+ // xxx   double fmax,const dvariable& pen,const ivector& flags,const ivector& group,double scale)
+ // xxx {
+ // xxx   int mmin=w.indexmin();
+ // xxx   int mmax=w.indexmax();
+ // xxx   int maxg=max(group);
+ // xxx   if (maxg)
+ // xxx   {
+ // xxx     ii--;
+ // xxx     for (int i=mmin;i<=mmax;i++)
+ // xxx     {
+ // xxx       if (flags(i)) w(i)=boundp(x(ii+group(i)),fmin,fmax,pen,scale);
+ // xxx     }
+ // xxx     ii+=max(group)+1;
+ // xxx   }
+ // xxx   else
+ // xxx   {
+ // xxx     for (int i=mmin;i<=mmax;i++)
+ // xxx     {
+ // xxx       if (flags(i)) w(i)=boundp(x(ii++),fmin,fmax,pen,scale);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx   void set_value(const dvar_vector& w,const dvar_vector& x,const int& ii,const ivector& onsw,
+ // xxx     const ivector& gpsw,double scale)
+ // xxx   {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (!sum(gpsw))
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (onsw(i))
+ // xxx         {
+ // xxx           w(i)=x(ii++)/scale;
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     else
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (onsw(i))
+ // xxx         {
+ // xxx           w(i)=x(ii+gpsw(i))/scale;
+ // xxx         }
+ // xxx       }
+ // xxx       ii+=max(gpsw);
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx   void set_value_inv(const dvector& w,const dvector& x,const int& ii,double fmin,double fmax,
+ // xxx     const ivector& flags,double scale)
+ // xxx   {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     {
+ // xxx       for (int i=mmin;i<=mmax;i++)
+ // xxx       {
+ // xxx         if (flags(i)) set_value_inv(w(i),x,ii,fmin,fmax);
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx void set_value(const dvar_vector& w,const dvar_vector& x,const int& ii,double fmin,
+ // xxx   double fmax,const dvariable& pen,const ivector& flags,double scale)
+ // xxx {
+ // xxx   int mmin=w.indexmin();
+ // xxx   int mmax=w.indexmax();
+ // xxx   {
+ // xxx     for (int i=mmin;i<=mmax;i++)
+ // xxx     {
+ // xxx       if (flags(i)) w(i)=boundp(x(ii++),fmin,fmax,pen,scale);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx /* ********************************************************************* */
+ // xxx   void set_value_inv(const dvar_vector& w,const dvector& x,const int& ii,
+ // xxx     double fmin,double fmax,const ivector& flags,const ivector& group,double s)
+ // xxx   {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     
+ // xxx     if (sum(flags))
+ // xxx     {
+ // xxx       if (sum(group))
+ // xxx       {
+ // xxx         check_group_for_holes(group);
+ // xxx         check_group_flag_sanity(flags,group);
+ // xxx         ivector key(mmin,mmax);
+ // xxx         sort(group,key);
+ // xxx         int kin=key(mmin);
+ // xxx         double w_value=static_cast<MY_REAL_DOUBLE>(value(w(kin)));
+ // xxx         int flag_value=flags(kin);
+ // xxx         if (flags(kin)) set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx         for (int i=mmin+1;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (group(key(i))==group(key(i-1)))
+ // xxx           {
+ // xxx             if (value(w(key(i)))!=w_value)
+ // xxx             {
+ // xxx               cerr << "Error -- grouped initial parameters have unequal values"
+ // xxx                    << endl;
+ // xxx               ad_exit(1);
+ // xxx             }
+ // xxx             if (flags(key(i))!=flag_value)
+ // xxx             {
+ // xxx               cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx                    << endl;
+ // xxx               ad_exit(1);
+ // xxx             }
+ // xxx           }
+ // xxx           else
+ // xxx           {
+ // xxx             kin=key(i);
+ // xxx             flag_value=flags(kin);
+ // xxx             w_value=static_cast<MY_REAL_DOUBLE>(value(w(kin)));
+ // xxx             if (flags(kin)) set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx       else
+ // xxx       {
+ // xxx         for (int i=mmin;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (flags(i)) set_value_inv(w(i),x,ii,fmin,fmax,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx void set_value_inv_exp(const prevariable& x,const dvector& _v,const int& _ii,
+ // xxx     double fmin, double fmax,double s)
+ // xxx {
+ // xxx   dvector& v=(dvector&)(_v);
+ // xxx   int& ii=(int&)(_ii);
+ // xxx   v(ii++)=boundpin(log(x),log(fmin),log(fmax),s);
+ // xxx }
+ // xxx 
+ // xxx 
+ // xxx   void set_value_inv_exp(const dvar_matrix& _mw,const dvector& x,const int& ii,
+ // xxx     double fmin,double fmax, const imatrix& mflags,const imatrix& mgroup,
+ // xxx     double s)
+ // xxx   {
+ // xxx     dvar_vector w=rowstack(_mw);
+ // xxx     ivector flags=rowstack(mflags);
+ // xxx     ivector group=rowstack(mgroup);
+ // xxx 
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(flags))
+ // xxx     {
+ // xxx       if (sum(group))
+ // xxx       {
+ // xxx         check_group_for_holes(group);
+ // xxx         check_group_flag_sanity(flags,group);
+ // xxx         ivector key(mmin,mmax);
+ // xxx         sort(group,key);
+ // xxx         int kin=key(mmin);
+ // xxx         int flag_value=flags(kin);
+ // xxx         double w_value=static_cast<MY_REAL_DOUBLE>(value(w(kin)));
+ // xxx         if (flags(kin)) set_value_inv_exp(w(kin),x,ii,fmin,fmax,s);
+ // xxx         for (int i=mmin+1;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (group(key(i))==group(key(i-1)))
+ // xxx           {
+ // xxx             if (value(w(key(i)))!=w_value)
+ // xxx             {
+ // xxx               cerr << "Error -- grouped initial parameters have unequal values"
+ // xxx                    << endl;
+ // xxx               ad_exit(1);
+ // xxx             }
+ // xxx             if (flags(key(i))!=flag_value)
+ // xxx             {
+ // xxx               cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx                    << endl;
+ // xxx               exit(1);
+ // xxx             }
+ // xxx           }
+ // xxx           else
+ // xxx           {
+ // xxx             kin=key(i);
+ // xxx             flag_value=flags(kin);
+ // xxx             w_value=static_cast<MY_REAL_DOUBLE>(value(w(kin)));
+ // xxx             if (flags(kin)) set_value_inv_exp(w(kin),x,ii,fmin,fmax,s);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx       else
+ // xxx       {
+ // xxx         for (int i=mmin;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (flags(i)) set_value_inv_exp(w(i),x,ii,fmin,fmax,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx     rowunstack(w,_mw);
+ // xxx   }
+ // xxx 
+ // xxx   void set_value_inv_exp(const dvar_vector& w,const dvector& x,const int& ii,
+ // xxx     double fmin,double fmax, const ivector& flags,const ivector& group,
+ // xxx     double s)
+ // xxx   {
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(flags))
+ // xxx     {
+ // xxx       if (sum(group))
+ // xxx       {
+ // xxx         check_group_for_holes(group);
+ // xxx         check_group_flag_sanity(flags,group);
+ // xxx         ivector key(mmin,mmax);
+ // xxx         sort(group,key);
+ // xxx         int kin=key(mmin);
+ // xxx         int flag_value=flags(kin);
+ // xxx         double w_value=static_cast<MY_REAL_DOUBLE>(value(w(kin)));
+ // xxx         if (flags(kin)) set_value_inv(w(kin),x,ii,fmin,fmax,s);
+ // xxx         for (int i=mmin+1;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (group(key(i))==group(key(i-1)))
+ // xxx           {
+ // xxx             if (value(w(key(i)))!=w_value)
+ // xxx             {
+ // xxx               cerr << "Error -- grouped initial parameters have unequal values"
+ // xxx                    << endl;
+ // xxx               ad_exit(1);
+ // xxx             }
+ // xxx             if (flags(key(i))!=flag_value)
+ // xxx             {
+ // xxx               cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx                    << endl;
+ // xxx               exit(1);
+ // xxx             }
+ // xxx           }
+ // xxx           else
+ // xxx           {
+ // xxx             kin=key(i);
+ // xxx             flag_value=flags(kin);
+ // xxx             w_value=static_cast<MY_REAL_DOUBLE>(value(w(kin)));
+ // xxx             if (flags(kin)) set_value_inv_exp(w(kin),x,ii,fmin,fmax,s);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx       else
+ // xxx       {
+ // xxx         for (int i=mmin;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (flags(i)) set_value_inv_exp(w(i),x,ii,fmin,fmax,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx   void set_value(const dvar_vector& _w,const dvar_vector& x,const int& _ii,
+ // xxx     double fmin,double fmax,const dvariable& pen,const ivector& flags,
+ // xxx     const ivector& group,double s)
+ // xxx   {
+ // xxx     dvar_vector& w=(dvar_vector&) _w;
+ // xxx     int& ii= (int&) _ii;
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(flags))
+ // xxx     {
+ // xxx       if (sum(group))
+ // xxx       {
+ // xxx         ivector key(mmin,mmax);
+ // xxx         sort(group,key);
+ // xxx         int kin=key(mmin);
+ // xxx         int flag_value=flags(kin);
+ // xxx         if (flags(kin)) set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx         for (int i=mmin+1;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (group(key(i))==group(key(i-1)))
+ // xxx           {
+ // xxx             if (flags(key(i))!=flag_value)
+ // xxx             {
+ // xxx               cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx                    << endl;
+ // xxx               ad_exit(1);
+ // xxx             }
+ // xxx             if (flags(key(i))) w(key(i))=w(kin);
+ // xxx           }
+ // xxx           else
+ // xxx           {
+ // xxx             kin=key(i);
+ // xxx             flag_value=flags(kin);
+ // xxx             if (flags(kin)) set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx       else
+ // xxx       {
+ // xxx         for (int i=mmin;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (flags(i)) set_value(w(i),x,ii,fmin,fmax,pen,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx   void set_value_exp(const dvar_vector& _w,const dvar_vector& x,const int& _ii,
+ // xxx     double fmin,double fmax,const dvariable& pen,const ivector& flags,
+ // xxx     const ivector& group,double s)
+ // xxx   {
+ // xxx     dvar_vector& w=(dvar_vector&) _w;
+ // xxx     int& ii= (int&) _ii;
+ // xxx     int mmin=w.indexmin();
+ // xxx     int mmax=w.indexmax();
+ // xxx     if (sum(flags))
+ // xxx     {
+ // xxx       if (sum(group))
+ // xxx       {
+ // xxx         ivector key(mmin,mmax);
+ // xxx         sort(group,key);
+ // xxx         int kin=key(mmin);
+ // xxx         int flag_value=flags(kin);
+ // xxx         if (flags(kin)) set_value(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx         for (int i=mmin+1;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (group(key(i))==group(key(i-1)))
+ // xxx           {
+ // xxx             if (flags(key(i))!=flag_value)
+ // xxx             {
+ // xxx               cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx                    << endl;
+ // xxx               ad_exit(1);
+ // xxx             }
+ // xxx             if (flags(key(i))) w(key(i))=w(kin);
+ // xxx           }
+ // xxx           else
+ // xxx           {
+ // xxx             kin=key(i);
+ // xxx             flag_value=flags(kin);
+ // xxx             if (flags(kin)) set_value_exp(w(kin),x,ii,fmin,fmax,pen,s);
+ // xxx           }
+ // xxx         }
+ // xxx       }
+ // xxx       else
+ // xxx       {
+ // xxx         for (int i=mmin;i<=mmax;i++)
+ // xxx         {
+ // xxx           if (flags(i)) set_value_exp(w(i),x,ii,fmin,fmax,pen,s);
+ // xxx         }
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx 
+ // xxx  // 
+ // xxx  //   void set_value(const dvar_vector& _w,const dvar_vector& x,const int& _ii,
+ // xxx  //     double fmin,double fmax,const dvariable& pen,const ivector& flags,
+ // xxx  //     const ivector& group)
+ // xxx  //   {
+ // xxx  //     dvar_vector& w=(dvar_vector&) _w;
+ // xxx  //     int& ii= (int&) _ii;
+ // xxx  //     int mmin=w.indexmin();
+ // xxx  //     int mmax=w.indexmax();
+ // xxx  //     if (sum(flags))
+ // xxx  //     {
+ // xxx  //       if (sum(group))
+ // xxx  //       {
+ // xxx  //         ivector key(mmin,mmax);
+ // xxx  //         sort(group,key);
+ // xxx  //         int kin=key(mmin);
+ // xxx  //         int flag_value=flags(kin);
+ // xxx  //         if (flags(kin)) set_value(w(kin),x,ii,fmin,fmax,pen);
+ // xxx  //         for (int i=mmin+1;i<=mmax;i++)
+ // xxx  //         {
+ // xxx  //           if (group(key(i))==group(key(i-1)))
+ // xxx  //           {
+ // xxx  //             if (flags(i)) w(i)=w(kin);
+ // xxx  //             if (flags(key(i))!=flag_value)
+ // xxx  //             {
+ // xxx  //               cerr << "Error -- grouped initial parameters have unequal flags"
+ // xxx  //                    << endl;
+ // xxx  //               exit(1);
+ // xxx  //             }
+ // xxx  //           }
+ // xxx  //           else
+ // xxx  //           {
+ // xxx  //             kin=key(i);
+ // xxx  //             flag_value=flags(kin);
+ // xxx  //             if (flags(kin)) set_value(w(kin),x,ii,fmin,fmax,pen);
+ // xxx  //           }
+ // xxx  //         }
+ // xxx  //       }
+ // xxx  //       else
+ // xxx  //       {
+ // xxx  //         for (int i=mmin;i<=mmax;i++)
+ // xxx  //         {
+ // xxx  //           if (flags(i)) set_value(w(i),x,ii,fmin,fmax,pen);
+ // xxx  //         }
+ // xxx  //       }
+ // xxx  //     }
+ // xxx  //   }
+ // xxx  // 
+ // xxx 
+ // xxx  // void set_value(const dvar_vector& _w,const dvar_vector& x,const int& _ii,
+ // xxx  //   double fmin,double fmax,const dvariable& pen,const ivector& flags,
+ // xxx  //   const ivector& group)
+ // xxx  // {
+ // xxx  //   dvar_vector& w=(dvar_vector&) _w;
+ // xxx  //   int& ii= (int&) _ii;
+ // xxx  //   int mmin=w.indexmin();
+ // xxx  //   int mmax=w.indexmax();
+ // xxx  //   int maxg=max(group);
+ // xxx  //   if (sum(flags))
+ // xxx  //   {
+ // xxx  //     if (maxg)
+ // xxx  //     {
+ // xxx  //       int icount=0;
+ // xxx  //       ivector group_flag(1,maxg);
+ // xxx  //       group_flag.initialize();
+ // xxx  //       ii--;
+ // xxx  //       for (int i=mmin;i<=mmax;i++)
+ // xxx  //       {
+ // xxx  //         if (flags(i)) 
+ // xxx  //         {
+ // xxx  //           w(i)=boundp(x(ii+group(i)),fmin,fmax,pen);
+ // xxx  //           if (!group_flag(group(i)))
+ // xxx  //           {
+ // xxx  //             icount++;
+ // xxx  //             group_flag(group(i))=1;
+ // xxx  //           }
+ // xxx  //         }
+ // xxx  //       }
+ // xxx  //       ii+=icount+1;
+ // xxx  //       //ii+=max(group)+1;
+ // xxx  //     }
+ // xxx  //     else
+ // xxx  //     {
+ // xxx  //       for (int i=mmin;i<=mmax;i++)
+ // xxx  //       {
+ // xxx  //         if (flags(i)) w(i)=boundp(x(ii++),fmin,fmax,pen);
+ // xxx  //       }
+ // xxx  //     }
+ // xxx  //   }
+ // xxx  // }
+ // xxx  // 
+ // xxx 
+ // xxx   
+ // xxx #define HOME_VERSION //COPYRIGHT (c) 1991 OTTER RESEARCH LTD
+ // xxx #include <admodel.h>
+ // xxx #include "fvar.hpp"
+ // xxx #define USE_BARD_PEN
+ // xxx /*
+ // xxx void set_value(const prevariable& _x,_CONST dvar_vector& v, const int& _ii)
+ // xxx {
+ // xxx   int& ii = (int&) _ii;
+ // xxx   prevariable& x= (prevariable&)( _x);
+ // xxx   x=v(ii++);
+ // xxx }
+ // xxx */
+ // xxx void set_value(const prevariable& _x,const dvar_vector& v, const int& _ii,
+ // xxx   double s)
+ // xxx {
+ // xxx   prevariable& x= (prevariable&)( _x);
+ // xxx   int& ii=(int&)(_ii);
+ // xxx   x=v(ii++)/s;
+ // xxx }
+ // xxx void set_value_inv(const prevariable& x,const dvector& _v,const int& _ii,
+ // xxx   double s)
+ // xxx {
+ // xxx   dvector& v=(dvector&)(_v);
+ // xxx   int& ii=(int&)(_ii);
+ // xxx   v(ii++)=s*value(x);
+ // xxx }
+ // xxx 
+ // xxx void set_value(const prevariable& _x,const dvar_vector& v,const int& _ii, 
+ // xxx   double fmin, double fmax,const dvariable& _fpen,double s)
+ // xxx {
+ // xxx   int& ii=(int&)_ii; 
+ // xxx   prevariable& x=(prevariable&) _x;
+ // xxx   dvariable& fpen=(dvariable&) _fpen;
+ // xxx   x=boundp(v(ii++),fmin,fmax,fpen,s);
+ // xxx }
+ // xxx 
+ // xxx 
+ // xxx void set_value_inv(const prevariable& x,const dvector& _v,const int& _ii,
+ // xxx   double fmin, double fmax,double s)
+ // xxx {
+ // xxx   dvector& v=(dvector&)(_v);
+ // xxx   int& ii=(int&)(_ii);
+ // xxx   v(ii++)=boundpin(x,fmin,fmax,s);
+ // xxx }
+ // xxx 
+ // xxx 
+ // xxx void set_value(const prevariable& _u,_CONST dvar_vector& x,const int& _ii, 
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax,const dvariable& _fpen)
+ // xxx {
+ // xxx   int& ii = (int&) _ii;
+ // xxx   prevariable& u= (prevariable&) _u;
+ // xxx   dvariable& fpen= (dvariable&) _fpen;
+ // xxx   if (!initial_params::straight_through_flag)
+ // xxx   {
+ // xxx     u=boundp(x(ii++),fmin,fmax,fpen);
+ // xxx   }
+ // xxx   else
+ // xxx   {
+ // xxx     u=x(ii);
+ // xxx     value(u)=boundp(value(x(ii++)),fmin,fmax);
+ // xxx     double diff=fmax-fmin;
+ // xxx     //t=fmin + diff*ss;
+ // xxx     dvariable ss=(u-fmin)/diff;
+ // xxx #   ifdef USE_BARD_PEN
+ // xxx       const double l4=log(4.0);
+ // xxx       double pen=.000001/diff;
+ // xxx       fpen-=pen*(log(ss+1.e-40)+log((1.0-ss)+1.e-40)+l4);
+ // xxx #   else 
+ // xxx           XXXX
+ // xxx #   endif
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value(const dvar_vector& x,_CONST dvar_vector& v, const int& _ii)
+ // xxx {
+ // xxx   int& ii = (int&) _ii;
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.indexmin();
+ // xxx     int max=x.indexmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       ((dvar_vector&)x)(i)=v(ii++);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx */
+ // xxx 
+ // xxx void set_value(const dvar_vector& _x,const dvar_vector& v, const int& _ii,double s)
+ // xxx {
+ // xxx   dvar_vector& x=(dvar_vector&) _x;
+ // xxx   int& ii = (int&) _ii;
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.indexmin();
+ // xxx     int max=x.indexmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       x(i)=v(ii++)/s;
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value(const dvar_vector& x,_CONST dvar_vector& v, const int& _ii,
+ // xxx   double fmin,double fmax,const dvariable& fpen)
+ // xxx {
+ // xxx   int& ii = (int&) _ii;
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.indexmin();
+ // xxx     int max=x.indexmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       ((dvar_vector&)(x))(i)=boundp(v(ii++),fmin,fmax,fpen);
+ // xxx     }
+ // xxx   }
+ // xxx } 
+ // xxx 
+ // xxx //dvariable boundp(const prevariable &,double fmin,double fmax,
+ // xxx //  const dvariable& fpen);
+ // xxx 
+ // xxx void set_value(const dvar_vector& _x,const dvar_vector& v,const int& _ii,
+ // xxx   double fmin,double fmax,const dvariable& fpen,double& s)
+ // xxx {
+ // xxx   dvar_vector& x=(dvar_vector&)(_x);
+ // xxx   int& ii = (int&) _ii;
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.indexmin();
+ // xxx     int max=x.indexmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       ((dvar_vector&)(x))(i)=boundp(v(ii++)/s,fmin,fmax,fpen);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value(const dvar_vector& _x,const dvar_vector& v,const int& _ii,
+ // xxx   double fmin,double fmax,const dvariable& fpen,double s,const ivector& flags,
+ // xxx   double off_value)
+ // xxx {
+ // xxx   dvar_vector& x=(dvar_vector&)(_x);
+ // xxx   int& ii = (int&) _ii;
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.indexmin();
+ // xxx     int max=x.indexmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       if (flags(i))
+ // xxx       {
+ // xxx         x(i)=boundp(v(ii++)/s,fmin,fmax,fpen);
+ // xxx       }
+ // xxx       else
+ // xxx       {
+ // xxx         x(i)=off_value;
+ // xxx       }
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value(const dvar_matrix& x,_CONST dvar_vector& v, const int& _ii)
+ // xxx {
+ // xxx   int& ii = (int&) _ii;
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.rowmin();
+ // xxx     int max=x.rowmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       set_value(x(i),v,ii);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx */
+ // xxx void set_value(const dvar_matrix& x,const dvar_vector& v,const int& _ii,
+ // xxx   double s)
+ // xxx {
+ // xxx   int& ii = (int&) _ii;
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.rowmin();
+ // xxx     int max=x.rowmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       set_value(x(i),v,ii,s);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx void set_value(const dvar_matrix& x,_CONST dvar_vector& v, const int& ii, 
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax,const dvariable& fpen)
+ // xxx {
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.rowmin();
+ // xxx     int max=x.rowmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       set_value(x(i),v,ii,fmin,fmax,fpen);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value(const dvar_matrix& x,const dvar_vector& v, const int& ii, 
+ // xxx   double fmin,double fmax,const dvariable& fpen,double s)
+ // xxx {
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.rowmin();
+ // xxx     int max=x.rowmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       set_value(x(i),v,ii,fmin,fmax,fpen,s);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx void set_value(dvar3_array& x,_CONST dvar_vector& v, const int& ii,
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax,const dvariable& fpen)
+ // xxx {
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.slicemin();
+ // xxx     int max=x.slicemax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       set_value(x(i),v,ii,fmin,fmax,fpen);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value(dvar3_array& x,_CONST dvar_vector& v, const int& ii,
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax,const dvariable& fpen,double s)
+ // xxx {
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.slicemin();
+ // xxx     int max=x.slicemax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       set_value(x(i),v,ii,fmin,fmax,fpen,s);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value_partial(const dvar_matrix& x,_CONST dvar_vector& v, const int& _ii, int n)
+ // xxx {
+ // xxx   int mmin=x.indexmin();
+ // xxx   int mmax=x.indexmax();
+ // xxx   for (int i=mmin;i<=mmax;i++)
+ // xxx   {
+ // xxx     set_value_partial(x(i),v,_ii,n);
+ // xxx   }
+ // xxx }
+ // xxx void set_value_partial(const dvar_vector& x,_CONST dvar_vector& v, const int& _ii, int n)
+ // xxx {
+ // xxx   int& ii = (int&) _ii;
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.indexmin();
+ // xxx     int max=min+n-1;
+ // xxx     #ifdef SAFE_ARRAYS
+ // xxx       if (max >x.indexmax())
+ // xxx       {
+ // xxx         cerr << "index out of range in set_value_patial(_CONST dvar_vector&, ... "
+ // xxx              << endl;
+ // xxx       }
+ // xxx     #endif
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       ((dvar_vector&)(x))(i)=v(ii++);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx */
+ // xxx void set_value_partial(const dvar_vector& x,_CONST dvar_vector& v, const int& _ii, int n,
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax,const dvariable& fpen)
+ // xxx {
+ // xxx   int& ii = (int&) _ii;
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.indexmin();
+ // xxx     int max=min+n-1;
+ // xxx     #ifdef SAFE_ARRAYS
+ // xxx       if (max >x.indexmax())
+ // xxx       {
+ // xxx         cerr << "index out of range in set_value_patial(_CONST dvar_vector&, ... "
+ // xxx              << endl;
+ // xxx       }
+ // xxx     #endif
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       ((dvar_vector&)(x))(i)=boundp(v(ii++),fmin,fmax,fpen);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value(dvar3_array& x,_CONST dvar_vector& v, const int& ii)
+ // xxx {
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.slicemin();
+ // xxx     int max=x.slicemax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       set_value(x(i),v,ii);
+ // xxx     }
+ // xxx   } 
+ // xxx }
+ // xxx */
+ // xxx 
+ // xxx 
+ // xxx 
+ // xxx #undef HOME_VERSION
+ // xxx 
+ // xxx 
+ // xxx #define HOME_VERSION //COPYRIGHT (c) 1991 OTTER RESEARCH LTD
+ // xxx #include "fvar.hpp"
+ // xxx 
+ // xxx /*
+ // xxx void set_value_inv( MY_REAL_DOUBLE x,const dvector& _v, const int& _ii)
+ // xxx {
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   int& ii=(int&) _ii;
+ // xxx   v(ii++)=x;
+ // xxx }
+ // xxx */
+ // xxx 
+ // xxx void set_value_inv( MY_REAL_DOUBLE u,const dvector& _x,const int& _ii, MY_REAL_DOUBLE fmin,
+ // xxx   MY_REAL_DOUBLE fmax)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& x=(dvector&) _x;
+ // xxx   x(ii++)=boundpin(u,fmin,fmax);
+ // xxx }
+ // xxx 
+ // xxx void set_value_inv(_CONST prevariable& u,const dvector& _x,const int& _ii,MY_REAL_DOUBLE fmin,
+ // xxx   MY_REAL_DOUBLE fmax)
+ // xxx {
+ // xxx   dvector& x=(dvector&) _x;
+ // xxx   int& ii=(int&) _ii;
+ // xxx   x(ii++)=boundpin(u,fmin,fmax);
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value_inv(_CONST dvector& x,const dvector& _v, const int& _ii)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   int min=x.indexmin();
+ // xxx   int max=x.indexmax();
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     v(ii++)=x(i);
+ // xxx   }
+ // xxx }
+ // xxx */
+ // xxx 
+ // xxx void set_value_inv(const dvector& x,const dvector& _v, const int& _ii,double s)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   int min=x.indexmin();
+ // xxx   int max=x.indexmax();
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     v(ii++)=x(i)*s;
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value_inv(_CONST dvector& x,const dvector& _v, const int& _ii,
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   int min=x.indexmin();
+ // xxx   int max=x.indexmax();
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     v(ii++)=boundpin(x(i),fmin,fmax);
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value_inv(_CONST dvar_vector& x,const dvector& _v, const int& _ii,
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   int min=x.indexmin();
+ // xxx   int max=x.indexmax();
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     v(ii++)=boundpin(x(i),fmin,fmax);
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value_inv(_CONST dmatrix& x,const dvector& v, const int& ii)
+ // xxx {
+ // xxx   int min=x.rowmin();
+ // xxx   int max=x.rowmax();
+ // xxx   if (allocated(x))
+ // xxx   {
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       if (allocated(x(i)))
+ // xxx         set_value_inv(x(i),v,ii);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx */
+ // xxx 
+ // xxx void set_value_inv(_CONST dmatrix& x,const dvector& v, const int& ii,
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax)
+ // xxx {
+ // xxx   int min=x.rowmin();
+ // xxx   int max=x.rowmax();
+ // xxx   if (allocated(x))
+ // xxx   {
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       if (allocated(x(i)))
+ // xxx         set_value_inv(x(i),v,ii,fmin,fmax);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value_inv(_CONST d3_array& x,const dvector& v, const int& ii)
+ // xxx {
+ // xxx   int min=x.slicemin();
+ // xxx   int max=x.slicemax();
+ // xxx   if (allocated(x))
+ // xxx   {
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       if (allocated(x(i)))
+ // xxx         set_value_inv(x(i),v,ii);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx */
+ // xxx 
+ // xxx void set_value_inv(_CONST d3_array& x,const dvector& v, const int& ii,
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax)
+ // xxx {
+ // xxx   int min=x.slicemin();
+ // xxx   int max=x.slicemax();
+ // xxx   if (allocated(x))
+ // xxx   {
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       if (allocated(x(i)))
+ // xxx         set_value_inv(x(i),v,ii,fmin,fmax);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value_inv_partial(_CONST dvector& x,const dvector& _v, const int& _ii, int n)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   int min=x.indexmin();
+ // xxx   int max=min+n-1;
+ // xxx   #ifdef SAFE_ARRAYS
+ // xxx     if (max >x.indexmax())
+ // xxx     {
+ // xxx       cerr << "index out of range in set_value_patial(_CONST dvar_vector&, ... "
+ // xxx 	   << endl;
+ // xxx     }
+ // xxx   #endif
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     v(ii++)=x(i);
+ // xxx   }
+ // xxx }
+ // xxx */
+ // xxx 
+ // xxx void set_value_inv_partial(_CONST dvector& x,const dvector& _v, const int& _ii, int n,
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   int min=x.indexmin();
+ // xxx   int max=min+n-1;
+ // xxx   #ifdef SAFE_ARRAYS
+ // xxx     if (max >x.indexmax())
+ // xxx     {
+ // xxx       cerr << "index out of range in set_value_patial(_CONST dvar_vector&, ... "
+ // xxx 	   << endl;
+ // xxx     }
+ // xxx   #endif
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     v(ii++)=boundpin(x(i),fmin,fmax);
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value_inv_partial(_CONST dvar_matrix& x,const dvector& _v, 
+ // xxx   const int& _ii, int n)
+ // xxx {
+ // xxx   int mmin=x.indexmin();
+ // xxx   int mmax=x.indexmax();
+ // xxx   for (int i=mmin;i<=mmax;i++)
+ // xxx   {
+ // xxx     set_value_inv_partial(x(i),_v,_ii,n); 
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value_inv_partial(_CONST dvar_vector& x,const dvector& _v, 
+ // xxx   const int& _ii, int n)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   int min=x.indexmin();
+ // xxx   int max=min+n-1;
+ // xxx   #ifdef SAFE_ARRAYS
+ // xxx     if (max >x.indexmax())
+ // xxx     {
+ // xxx       cerr << "index out of range in set_value_patial(_CONST dvar_vector&, ... "
+ // xxx 	   << endl;
+ // xxx     }
+ // xxx   #endif
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     v(ii++)=value(x(i));
+ // xxx   }
+ // xxx }
+ // xxx */
+ // xxx 
+ // xxx void set_value_inv_partial(_CONST dvar_vector& x,const dvector& _v, const int& _ii, int n,
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   int min=x.indexmin();
+ // xxx   int max=min+n-1;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   #ifdef SAFE_ARRAYS
+ // xxx     if (max >x.indexmax())
+ // xxx     {
+ // xxx       cerr << "index out of range in set_value_patial(_CONST dvar_vector&, ... "
+ // xxx 	   << endl;
+ // xxx     }
+ // xxx   #endif
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     v(ii++)=boundpin(x(i),fmin,fmax);
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value_inv(_CONST prevariable& x,const dvector& _v, const int& _ii)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   v(ii++)=value(x);
+ // xxx }
+ // xxx */
+ // xxx 
+ // xxx void set_value_inv(_CONST dvariable& u,const dvector& _x,const int& _ii,MY_REAL_DOUBLE fmin,
+ // xxx   MY_REAL_DOUBLE fmax)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& x=(dvector&) _x;
+ // xxx   x(ii++)=boundpin(value(u),fmin,fmax);
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value_inv(_CONST dvar_vector& x,const dvector& _v,const int& _ii)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.indexmin();
+ // xxx     int max=x.indexmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       v(ii++)=value(x(i));
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx */
+ // xxx 
+ // xxx void set_value_inv(const dvar_vector& x,const dvector& _v,const int& _ii,
+ // xxx   double fmin,double fmax,double s)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   int min=x.indexmin();
+ // xxx   int max=x.indexmax();
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     v(ii++)=boundpin(x(i),fmin,fmax)*s;
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value_inv(const dvar_vector& x,const dvector& _v,const int& _ii,
+ // xxx   double fmin,double fmax,double s,const ivector& flags)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   int min=x.indexmin();
+ // xxx   int max=x.indexmax();
+ // xxx   for (int i=min;i<=max;i++)
+ // xxx   {
+ // xxx     if (flags(i))
+ // xxx     {
+ // xxx       v(ii++)=boundpin(x(i),fmin,fmax)*s;
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value_inv(const dvar_vector& x,const dvector& _v,const int& _ii,double s)
+ // xxx {
+ // xxx   int& ii=(int&) _ii;
+ // xxx   dvector& v=(dvector&) _v;
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.indexmin();
+ // xxx     int max=x.indexmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       v(ii++)=value(x(i))*s;
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value_inv(_CONST dvar_matrix& x,const dvector& v, const int& ii)
+ // xxx {
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.rowmin();
+ // xxx     int max=x.rowmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       if (allocated(x(i)))
+ // xxx         set_value_inv(x(i),v,ii);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx */
+ // xxx 
+ // xxx void set_value_inv(const dvar_matrix& x,const dvector& v, const int& ii,
+ // xxx   double s)
+ // xxx {
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.rowmin();
+ // xxx     int max=x.rowmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       if (allocated(x(i)))
+ // xxx         set_value_inv(x(i),v,ii,s);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value_inv(_CONST dvar_matrix& x,const dvector& v, const int& ii,
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax)
+ // xxx {
+ // xxx   if (allocated(x))
+ // xxx   {
+ // xxx     int min=x.rowmin();
+ // xxx     int max=x.rowmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       if (allocated(x(i)))
+ // xxx         set_value_inv(x(i),v,ii,fmin,fmax);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx void set_value_inv(const dvar_matrix& x,const dvector& v, const int& ii,
+ // xxx   double fmin,double fmax,double s)
+ // xxx {
+ // xxx   if (allocated(x))
+ // xxx   {
+ // xxx     int min=x.rowmin();
+ // xxx     int max=x.rowmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       if (allocated(x(i)))
+ // xxx         set_value_inv(x(i),v,ii,fmin,fmax,s);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx void set_value_inv(const dvar3_array& x,const dvector& v, const int& ii,
+ // xxx   double fmin,double fmax,double s)
+ // xxx {
+ // xxx   if (allocated(x))
+ // xxx   {
+ // xxx     int min=x.rowmin();
+ // xxx     int max=x.rowmax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       if (allocated(x(i)))
+ // xxx         set_value_inv(x(i),v,ii,fmin,fmax,s);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx /*
+ // xxx void set_value_inv(_CONST dvar3_array& x,const dvector& v, const int& ii)
+ // xxx {
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.slicemin();
+ // xxx     int max=x.slicemax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       if (allocated(x(i)))
+ // xxx         set_value_inv(x(i),v,ii);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx */
+ // xxx 
+ // xxx void set_value_inv(_CONST dvar3_array& x,const dvector& v, const int& ii,
+ // xxx   MY_REAL_DOUBLE fmin,MY_REAL_DOUBLE fmax)
+ // xxx {
+ // xxx   if (!(!(x)))
+ // xxx   {
+ // xxx     int min=x.slicemin();
+ // xxx     int max=x.slicemax();
+ // xxx     for (int i=min;i<=max;i++)
+ // xxx     {
+ // xxx       if (allocated(x(i)))
+ // xxx         set_value_inv(x(i),v,ii,fmin,fmax);
+ // xxx     }
+ // xxx   }
+ // xxx }
+ // xxx 
+ // xxx #undef HOME_VERSION
