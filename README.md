@@ -17,9 +17,9 @@ tagging data. MULTIFAN-CL has provided the basis for undertaking stock
 assessments of tuna and billfish in the Western and Central Pacific Ocean.
 
 The [User's Guide](manual) describes the model features and documents the
-release history since 2011, when Nick Davies took over the development and
-maintenance of the source code. MULTIFAN-CL became open-source software in 2025,
-released under the Simplified BSD License.
+release history since 2011, when Nick Davies joined the development team in the
+development and maintenance of the source code and User's Guide. MULTIFAN-CL 
+became open-source software in 2025, released under the Simplified BSD License.
 
 ## Acknowledgements
 
