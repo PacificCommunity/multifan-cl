@@ -18,7 +18,7 @@ assessments of tuna and billfish in the Western and Central Pacific Ocean.
 
 The [User's Guide](manual) describes the model features and documents the
 release history since 2011, when Nick Davies joined the development team in the
-development and maintenance of the source code and User's Guide. MULTIFAN-CL 
+development and maintenance of the source code and User's Guide. MULTIFAN-CL
 became open-source software in 2025, released under the Simplified BSD License.
 
 ## Acknowledgements
@@ -53,3 +53,15 @@ Hampton, J. and D.A. Fournier. 2001. A spatially disaggregated, length-based,
 age-structured population model of yellowfin tuna (*Thunnus albacares*) in the
 western and central Pacific Ocean.\
 [Mar. Freshwater Res. 52, 937-963](https://doi.org/10.1071/MF01049).
+
+## Examples
+
+Official stock assessments using MULTIFAN-CL are listed on the [SPC
+website](https://fame.spc.int/resources/stockassessmentfiles). Since 2023, the
+stock assessments are provided in a format that can be explored and run, for
+example:
+
+* [2023 Yellowfin](https://github.com/PacificCommunity/ofp-sam-yft-2023-diagnostic#readme)
+* [2023 Bigeye](https://github.com/PacificCommunity/ofp-sam-bet-2023-diagnostic#readme)
+* [2024 Albacore](https://github.com/PacificCommunity/ofp-sam-alb-2024-diagnostic#readme)
+* [2025 Skipjack](https://github.com/PacificCommunity/ofp-sam-skj-2025-diagnostic#readme)
