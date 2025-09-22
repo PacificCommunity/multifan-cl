@@ -327,12 +327,14 @@ void dvar_len_fish_stock_history::mean_weights_calc(int mode_flag)
         dvariable vbc3;
         dvariable vbc1;
         dvariable vbc2;
+        dvariable vbc4;
         dvar_vector ap3=get_age_pars_species(isp,3);
         if (isp==1)
         {
           vbc1=vb_coff(1);
           vbc2=vb_coff(2);
           vbc3=vb_coff(3);
+          vbc4=vb_coff(4);
           rho=exp(-vb_coff(3));
         }
         else
@@ -340,6 +342,7 @@ void dvar_len_fish_stock_history::mean_weights_calc(int mode_flag)
           vbc1=pmsd->vb_coff(isp,1);
           vbc2=pmsd->vb_coff(isp,2);
           vbc3=pmsd->vb_coff(isp,3);
+          vbc4=pmsd->vb_coff(isp,4);
           rho=exp(-vbc3);
         }
 #if !defined(NO_MY_DOUBLE_TYPE)
@@ -535,18 +538,18 @@ void dvar_len_fish_stock_history::mean_weights_calc(int mode_flag)
 //              length_calc(tt,vbc1,vbc2,temp1,temp2);
               if (parest_flags(226)==0)
               {
-                length_calc(tt,vb_coff(1),vb_coff(2),temp1,temp2);
+                length_calc(tt,vbc1,vbc2,temp1,temp2);
               }
               else
               {
                 dvariable T;
                 if (parest_flags(226)==1)
-                  T=-exp(vb_coff(4));
+                  T=-exp(vbc4);
                 else
-                  T=exp(vb_coff(4));
+                  T=exp(vbc4);
 
-                dvariable c1=pow(vb_coff(1),-1.0/T);
-                dvariable cN=pow(vb_coff(2),-1.0/T);
+                dvariable c1=pow(vbc1,-1.0/T);
+                dvariable cN=pow(vbc2,-1.0/T);
 
                 length_calc(tt,c1,cN,temp1,temp2);
                 tt=pow(tt,-T);
