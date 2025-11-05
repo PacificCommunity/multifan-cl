@@ -1,6 +1,6 @@
 # MULTIFAN-CL
 
-[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
+[![License](https://img.shields.io/badge/License-BSD_2--Clause-green.svg)](https://opensource.org/licenses/BSD-2-Clause)
 ![Static Badge](https://img.shields.io/badge/Language-C%2B%2B-blue)
 
 MULTIFAN-CL is a computer program that implements a statistical, length-based,
